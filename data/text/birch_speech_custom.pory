@@ -1,0 +1,19 @@
+text gText_Birch_Welcome_Custom {
+    "...\n"
+    "...\p"
+    "...\n"
+    "...\p"
+}
+
+text gText_Birch_Welcome_Choose_Gender_Custom {
+    "... What was\n"
+    "... I?"
+}
+
+text gText_Birch_Welcome_Choose_Name_Custom {
+    "My name was..."
+}
+
+text gText_Birch_SoItsPlayer_Custom {
+    "{PLAYER}{KUN}?"
+}
