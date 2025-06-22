@@ -4416,8 +4416,8 @@
       "name": "Custom_Room_Layout",
       "width": 10,
       "height": 10,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_BattleArena",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/Custom_Room/border.bin",
       "blockdata_filepath": "data/layouts/Custom_Room/map.bin"
     }

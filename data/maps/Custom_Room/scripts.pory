@@ -1,0 +1,18 @@
+mapscripts Custom_Room_MapScripts {
+    
+}
+
+script ChooseOneStarter {
+    fadescreen(FADE_TO_BLACK)
+    special(ChooseStarter)
+    setflag(FLAG_SYS_POKEMON_GET) # So that the Pokemon entry appears in the start menu
+}
+
+script AcceptPokemonA {
+    yesnobox(20, 8)
+    if (var(VAR_RESULT) == TRUE) {
+        msgbox(MauvilleCity_PokemonCenter_1F_Text_GiddyFeelingTheBlues, MSGBOX_DEFAULT)
+        release
+    }
+
+}
