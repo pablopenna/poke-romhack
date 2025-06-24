@@ -15,8 +15,9 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
-      "x": 2,
+      "local_id": "LOCALID_POKEBALL_A",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
+      "x": 4,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -24,12 +25,13 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ChooseOneStarter",
-      "flag": "0"
+      "script": "Custom_Room_TakePokemonA",
+      "flag": "FLAG_CUSTOM_RECEIVED_STARTER"
     },
     {
+      "local_id": "LOCALID_POKEBALL_B",
       "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
-      "x": 7,
+      "x": 5,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -37,8 +39,22 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "AcceptPokemonA",
-      "flag": "0"
+      "script": "Custom_Room_TakePokemonB",
+      "flag": "FLAG_CUSTOM_RECEIVED_STARTER"
+    },
+    {
+      "local_id": "LOCALID_POKEBALL_C",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
+      "x": 6,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Custom_Room_TakePokemonC",
+      "flag": "FLAG_CUSTOM_RECEIVED_STARTER"
     }
   ],
   "warp_events": [
@@ -46,15 +62,15 @@
       "x": 4,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_CUSTOM_ROOM",
+      "dest_warp_id": "0"
     },
     {
       "x": 5,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_CUSTOM_ROOM",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

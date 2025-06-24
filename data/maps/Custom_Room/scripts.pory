@@ -1,18 +1,73 @@
 mapscripts Custom_Room_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        # clearflag(FLAG_CUSTOM_RECEIVED_STARTER)
+        setflag(FLAG_SYS_B_DASH) # Enable running shoes
+    }
     
 }
 
-script ChooseOneStarter {
-    fadescreen(FADE_TO_BLACK)
-    special(ChooseStarter)
-    setflag(FLAG_SYS_POKEMON_GET) # So that the Pokemon entry appears in the start menu
+const POKEMON_A = SPECIES_KANGASKHAN
+const POKEMON_B = SPECIES_HERACROSS
+const POKEMON_C = SPECIES_ABSOL
+const STARTER_LEVEL = 20
+
+#script ChooseOneStarter {
+#    fadescreen(FADE_TO_BLACK)
+#    special(ChooseStarter)
+#    setflag(FLAG_SYS_POKEMON_GET) # So that the Pokemon entry appears in the start menu
+#}
+
+script Custom_Room_TakePokemonA {
+    setvar(VAR_TEMP_1, POKEMON_A)
+    setvar(VAR_TEMP_2, LOCALID_POKEBALL_A)
+    goto(AcceptPokemon)
 }
 
-script AcceptPokemonA {
-    yesnobox(20, 8)
-    if (var(VAR_RESULT) == TRUE) {
-        msgbox(MauvilleCity_PokemonCenter_1F_Text_GiddyFeelingTheBlues, MSGBOX_DEFAULT)
-        release
-    }
+script Custom_Room_TakePokemonB {
+    setvar(VAR_TEMP_1, POKEMON_B)
+    setvar(VAR_TEMP_2, LOCALID_POKEBALL_B)
+    goto(AcceptPokemon)
+}
 
+script Custom_Room_TakePokemonC {
+    setvar(VAR_TEMP_1, POKEMON_C)
+    setvar(VAR_TEMP_2, LOCALID_POKEBALL_C)
+    goto(AcceptPokemon)
+}
+
+script Custom_Room_TakePokemonRandom {
+    # If locking up to HOENN use 386 (DEOXYS)
+    random(NUM_SPECIES)
+    copyvar(VAR_TEMP_1, VAR_RESULT)
+}
+
+script(local) AcceptPokemon {
+    if (flag(FLAG_CUSTOM_RECEIVED_STARTER) == TRUE) {
+        msgbox(Text_CustomRoom_CannotDoThat, MSGBOX_AUTOCLOSE)
+        return
+    }
+    
+    showmonpic(VAR_TEMP_1, 10, 3)
+	msgbox(Text_CustomRoom_DoYouWantThisPokemon, MSGBOX_YESNO)
+    hidemonpic
+    if(var(VAR_RESULT) == TRUE) {
+        givemon(VAR_TEMP_1, STARTER_LEVEL)
+        setflag(FLAG_SYS_POKEMON_GET) # So that the Pokemon entry appears in the start menu
+        msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_DEFAULT)
+        setflag(FLAG_CUSTOM_RECEIVED_STARTER)
+        removeobject(VAR_TEMP_2)
+    }
+    release
+}
+
+text Text_CustomRoom_DoYouWantThisPokemon {
+    format("Do I want this Pokémon?")
+}
+
+text Text_CustomRoom_PokemonPicked {
+    format("It is done.")
+}
+
+text Text_CustomRoom_CannotDoThat {
+    format("I cannot do that.")
 }
