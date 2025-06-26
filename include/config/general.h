@@ -53,6 +53,9 @@
 #define POKEMON_EXPANSION
 #define ITEM_EXPANSION
 
+// Custom configuration
+#define DISABLE_OBEY_SYSTEM 1 // Change to 0 to re-enable
+
 // Generation constants used in configs to define behavior.
 #define GEN_1 0
 #define GEN_2 1
