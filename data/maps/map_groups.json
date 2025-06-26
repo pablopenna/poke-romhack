@@ -623,6 +623,7 @@
     "Route124_DivingTreasureHuntersHouse"
   ],
   "gMapGroup_Custom": [
-    "Custom_Room"
+    "Custom_Room",
+    "Custom_Hall"
   ]
 }

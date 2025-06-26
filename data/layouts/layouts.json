@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/Custom_Room/border.bin",
       "blockdata_filepath": "data/layouts/Custom_Room/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HALL",
+      "name": "Custom_Hall_Layout",
+      "width": 20,
+      "height": 30,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_CableClub",
+      "border_filepath": "data/layouts/Custom_Hall/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hall/map.bin"
     }
   ]
 }

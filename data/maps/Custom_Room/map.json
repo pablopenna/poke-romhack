@@ -62,14 +62,14 @@
       "x": 4,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_CUSTOM_ROOM",
+      "dest_map": "MAP_CUSTOM_HALL",
       "dest_warp_id": "0"
     },
     {
       "x": 5,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_CUSTOM_ROOM",
+      "dest_map": "MAP_CUSTOM_HALL",
       "dest_warp_id": "1"
     }
   ],
