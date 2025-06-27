@@ -6,91 +6,181 @@ Custom_Room_MapScripts::
 Custom_Room_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 4 "data/maps/Custom_Room/scripts.pory"
 	setflag FLAG_SYS_B_DASH
+# 5 "data/maps/Custom_Room/scripts.pory"
+	setrespawn HEAL_LOCATION_CUSTOM_ROOM
+# 9 "data/maps/Custom_Room/scripts.pory"
+	setvar VAR_TEMP_3, 0
+# 10 "data/maps/Custom_Room/scripts.pory"
+	setvar VAR_TEMP_4, 0
+# 11 "data/maps/Custom_Room/scripts.pory"
+	goto_if_set FLAG_CUSTOM_RECEIVED_STARTER, Custom_Room_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
+Custom_Room_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 12 "data/maps/Custom_Room/scripts.pory"
+	setvar VAR_TEMP_4, 1
+	return
+
+
+Custom_Room_IntroSequence::
+# 24 "data/maps/Custom_Room/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 25 "data/maps/Custom_Room/scripts.pory"
+	msgbox Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE
+# 26 "data/maps/Custom_Room/scripts.pory"
+	fadescreen FADE_FROM_BLACK
+	return
+
+
+Custom_Room_DeprecatedChooseOneStarter::
+# 30 "data/maps/Custom_Room/scripts.pory"
+	fadescreen FADE_TO_BLACK
+# 31 "data/maps/Custom_Room/scripts.pory"
+	special ChooseStarter
+# 32 "data/maps/Custom_Room/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
 	return
 
 
 Custom_Room_TakePokemonA::
-# 21 "data/maps/Custom_Room/scripts.pory"
+# 36 "data/maps/Custom_Room/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_KANGASKHAN
-# 22 "data/maps/Custom_Room/scripts.pory"
+# 37 "data/maps/Custom_Room/scripts.pory"
 	setvar VAR_TEMP_2, LOCALID_POKEBALL_A
-# 23 "data/maps/Custom_Room/scripts.pory"
+# 38 "data/maps/Custom_Room/scripts.pory"
 	goto AcceptPokemon
 	return
 
 
 Custom_Room_TakePokemonB::
-# 27 "data/maps/Custom_Room/scripts.pory"
+# 42 "data/maps/Custom_Room/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_HERACROSS
-# 28 "data/maps/Custom_Room/scripts.pory"
+# 43 "data/maps/Custom_Room/scripts.pory"
 	setvar VAR_TEMP_2, LOCALID_POKEBALL_B
-# 29 "data/maps/Custom_Room/scripts.pory"
+# 44 "data/maps/Custom_Room/scripts.pory"
 	goto AcceptPokemon
 	return
 
 
 Custom_Room_TakePokemonC::
-# 33 "data/maps/Custom_Room/scripts.pory"
+# 48 "data/maps/Custom_Room/scripts.pory"
 	setvar VAR_TEMP_1, SPECIES_ABSOL
-# 34 "data/maps/Custom_Room/scripts.pory"
+# 49 "data/maps/Custom_Room/scripts.pory"
 	setvar VAR_TEMP_2, LOCALID_POKEBALL_C
-# 35 "data/maps/Custom_Room/scripts.pory"
+# 50 "data/maps/Custom_Room/scripts.pory"
 	goto AcceptPokemon
 	return
 
 
 Custom_Room_TakePokemonRandom::
-# 40 "data/maps/Custom_Room/scripts.pory"
+# 55 "data/maps/Custom_Room/scripts.pory"
 	random NUM_SPECIES
-# 41 "data/maps/Custom_Room/scripts.pory"
+# 56 "data/maps/Custom_Room/scripts.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
 	return
 
 
 AcceptPokemon:
-# 45 "data/maps/Custom_Room/scripts.pory"
+# 60 "data/maps/Custom_Room/scripts.pory"
 	goto_if_set FLAG_CUSTOM_RECEIVED_STARTER, AcceptPokemon_2
-# 50 "data/maps/Custom_Room/scripts.pory"
+# 65 "data/maps/Custom_Room/scripts.pory"
 	showmonpic VAR_TEMP_1, 10, 3
-# 51 "data/maps/Custom_Room/scripts.pory"
+# 66 "data/maps/Custom_Room/scripts.pory"
 	msgbox Text_CustomRoom_DoYouWantThisPokemon, MSGBOX_YESNO
-# 52 "data/maps/Custom_Room/scripts.pory"
+# 67 "data/maps/Custom_Room/scripts.pory"
 	hidemonpic
-# 53 "data/maps/Custom_Room/scripts.pory"
+# 68 "data/maps/Custom_Room/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq AcceptPokemon_5
 AcceptPokemon_4:
-# 60 "data/maps/Custom_Room/scripts.pory"
-	release
+# 79 "data/maps/Custom_Room/scripts.pory"
+	compare VAR_TEMP_3, 1
+	goto_if_eq AcceptPokemon_7
 	return
 
 AcceptPokemon_2:
-# 46 "data/maps/Custom_Room/scripts.pory"
+# 61 "data/maps/Custom_Room/scripts.pory"
 	msgbox Text_CustomRoom_CannotDoThat, MSGBOX_AUTOCLOSE
 	return
 
 AcceptPokemon_5:
-# 54 "data/maps/Custom_Room/scripts.pory"
-	givemon VAR_TEMP_1, 20
-# 55 "data/maps/Custom_Room/scripts.pory"
+# 69 "data/maps/Custom_Room/scripts.pory"
+	givemon VAR_TEMP_1, 5
+# 70 "data/maps/Custom_Room/scripts.pory"
+	setvar VAR_CUSTOM_LEVEL_CAP, 15
+# 71 "data/maps/Custom_Room/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 56 "data/maps/Custom_Room/scripts.pory"
-	msgbox Text_CustomRoom_PokemonPicked, MSGBOX_DEFAULT
-# 57 "data/maps/Custom_Room/scripts.pory"
+# 72 "data/maps/Custom_Room/scripts.pory"
 	setflag FLAG_CUSTOM_RECEIVED_STARTER
-# 58 "data/maps/Custom_Room/scripts.pory"
+# 73 "data/maps/Custom_Room/scripts.pory"
+	msgbox Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE
+# 74 "data/maps/Custom_Room/scripts.pory"
 	removeobject VAR_TEMP_2
+# 75 "data/maps/Custom_Room/scripts.pory"
+	setvar VAR_TEMP_3, 1
+# 76 "data/maps/Custom_Room/scripts.pory"
+	setvar VAR_TEMP_4, 1
 	goto AcceptPokemon_4
 
+AcceptPokemon_7:
+# 80 "data/maps/Custom_Room/scripts.pory"
+	goto GiveStartingItems
+	return
+
+
+GiveStartingItems:
+# 87 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_RARE_CANDY, 999
+# 88 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_HP_UP, 999
+# 89 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_PROTEIN, 999
+# 90 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_IRON, 999
+# 91 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_CALCIUM, 999
+# 92 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_ZINC, 999
+# 93 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_CARBOS, 999
+	return
+
+
+Custom_Room_ForceTakePokemon::
+# 97 "data/maps/Custom_Room/scripts.pory"
+	msgbox Text_CustomRoom_YouHaveToPick, MSGBOX_AUTOCLOSE
+# 98 "data/maps/Custom_Room/scripts.pory"
+	applymovement LOCALID_PLAYER, WalkUp
+# 99 "data/maps/Custom_Room/scripts.pory"
+	waitmovement LOCALID_PLAYER
+	return
+
+
+# 103 "data/maps/Custom_Room/scripts.pory"
+WalkUp:
+# 104 "data/maps/Custom_Room/scripts.pory"
+	walk_up
+# 104 "data/maps/Custom_Room/scripts.pory"
+	walk_up
+# 104 "data/maps/Custom_Room/scripts.pory"
+	walk_up
+# 104 "data/maps/Custom_Room/scripts.pory"
+	walk_up
+	step_end
 
 Text_CustomRoom_DoYouWantThisPokemon::
-# 63 "data/maps/Custom_Room/scripts.pory"
-	.string "Do I want this Pokémon?$"
+# 107 "data/maps/Custom_Room/scripts.pory"
+	.string "Do you want this Pokémon?$"
 
 Text_CustomRoom_PokemonPicked::
-# 67 "data/maps/Custom_Room/scripts.pory"
+# 111 "data/maps/Custom_Room/scripts.pory"
 	.string "It is done.$"
 
 Text_CustomRoom_CannotDoThat::
-# 71 "data/maps/Custom_Room/scripts.pory"
-	.string "I cannot do that.$"
+# 115 "data/maps/Custom_Room/scripts.pory"
+	.string "You cannot do that.$"
+
+Text_CustomRoom_YouHaveToPick::
+# 119 "data/maps/Custom_Room/scripts.pory"
+	.string "You cannot let yourself leave without\n"
+	.string "picking one Pokémon.$"

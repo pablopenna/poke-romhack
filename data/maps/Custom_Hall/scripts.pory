@@ -1,6 +1,56 @@
-mapscripts Custom_Hall_MapScripts {}
+mapscripts Custom_Hall_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION { 
+        clearflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2)
+        setvar(VAR_TEMP_5, 1)
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+		VAR_TEMP_5, 1 {
+            fadescreen(FADE_TO_BLACK)
+            msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE)
+            fadescreen(FADE_FROM_BLACK)
+            setvar(VAR_TEMP_5, 0)
+        }
+	]
+}
 
 script Custom_Hall_Battle1 {
-    trainerbattle_single(TRAINER_SAWYER_1, VictoryRoad_1F_Text_EdgarIntro, VictoryRoad_1F_Text_EdgarDefeat)
-	msgbox(VictoryRoad_1F_Text_EdgarPostBattle, MSGBOX_AUTOCLOSE)
+    trainerbattle_single(TRAINER_SAWYER_1, VictoryRoad_1F_Text_EdgarIntro, VictoryRoad_1F_Text_EdgarDefeat, AfterBattle)
+    msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE)
+}
+
+script(local) AfterBattle {
+    fadescreen(FADE_TO_BLACK)
+    msgbox(VictoryRoad_1F_Text_EdgarPostBattle, MSGBOX_AUTOCLOSE)
+    removeobject(LOCALID_CUSTOM_HALL_TRAINER)
+    setflag(FLAG_TEMP_1)
+    clearflag(FLAG_TEMP_2)
+    addobject(LOCALID_CUSTOM_HALL_OBSTACLE_1)
+    addobject(LOCALID_CUSTOM_HALL_OBSTACLE_2)
+    addobject(LOCALID_CUSTOM_HALL_WILDMON1)
+    
+    setvar(VAR_CUSTOM_LEVEL_CAP, 45)
+    // warpteleport(MAP_CUSTOM_HALL, 11, 7)
+    delay(10)
+    fadescreen(FADE_FROM_WHITE)
+}
+
+script Custom_Hall_Encounter1 {
+    setwildbattle(SPECIES_DEOXYS, 50)
+    playmoncry(SPECIES_DEOXYS, CRY_MODE_ENCOUNTER)
+    delay(40)
+	waitmoncry
+    dowildbattle
+    
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if(var(VAR_RESULT) != B_OUTCOME_WON) {
+        return
+    }
+    fadescreen(FADE_TO_BLACK)
+    msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE)
+    setflag(FLAG_TEMP_2)
+    removeobject(LOCALID_CUSTOM_HALL_OBSTACLE_1)
+    removeobject(LOCALID_CUSTOM_HALL_OBSTACLE_2)
+    removeobject(LOCALID_CUSTOM_HALL_WILDMON1)
+    fadescreen(FADE_FROM_BLACK)
 }

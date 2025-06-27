@@ -2,20 +2,35 @@ mapscripts Custom_Room_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         # clearflag(FLAG_CUSTOM_RECEIVED_STARTER)
         setflag(FLAG_SYS_B_DASH) # Enable running shoes
+        setrespawn(HEAL_LOCATION_CUSTOM_ROOM)
+        # goto(Custom_Room_IntroSequence) # Don't know why but this crashes the game if called from here
+        
+        # Triggers
+        setvar(VAR_TEMP_3, 0)
+        setvar(VAR_TEMP_4, 0)
+        if(flag(FLAG_CUSTOM_RECEIVED_STARTER)) {
+            setvar(VAR_TEMP_4, 1)
+        }
     }
-    
 }
 
 const POKEMON_A = SPECIES_KANGASKHAN
 const POKEMON_B = SPECIES_HERACROSS
 const POKEMON_C = SPECIES_ABSOL
-const STARTER_LEVEL = 20
+const STARTER_LEVEL = 5
+const STARTING_LEVEL_CAP = 15
 
-#script ChooseOneStarter {
-#    fadescreen(FADE_TO_BLACK)
-#    special(ChooseStarter)
-#    setflag(FLAG_SYS_POKEMON_GET) # So that the Pokemon entry appears in the start menu
-#}
+script Custom_Room_IntroSequence {
+    fadescreen(FADE_TO_BLACK)
+    msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE)
+    fadescreen(FADE_FROM_BLACK)
+}
+
+script Custom_Room_DeprecatedChooseOneStarter {
+    fadescreen(FADE_TO_BLACK)
+    special(ChooseStarter)
+    setflag(FLAG_SYS_POKEMON_GET) # So that the Pokemon entry appears in the start menu
+}
 
 script Custom_Room_TakePokemonA {
     setvar(VAR_TEMP_1, POKEMON_A)
@@ -52,16 +67,45 @@ script(local) AcceptPokemon {
     hidemonpic
     if(var(VAR_RESULT) == TRUE) {
         givemon(VAR_TEMP_1, STARTER_LEVEL)
+        setvar(VAR_CUSTOM_LEVEL_CAP, STARTING_LEVEL_CAP)
         setflag(FLAG_SYS_POKEMON_GET) # So that the Pokemon entry appears in the start menu
-        msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_DEFAULT)
         setflag(FLAG_CUSTOM_RECEIVED_STARTER)
+        msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE)
         removeobject(VAR_TEMP_2)
+        setvar(VAR_TEMP_3, 1)
+        setvar(VAR_TEMP_4, 1)
     }
-    release
+
+    if(var(VAR_TEMP_3) == 1) {
+        goto(GiveStartingItems)
+    }
+}
+
+script(local) GiveStartingItems {
+    #giveitem(ITEM_RARE_CANDY, 999)
+
+    addpcitem(ITEM_RARE_CANDY, 999)
+    addpcitem(ITEM_HP_UP, 999)
+    addpcitem(ITEM_PROTEIN, 999)
+    addpcitem(ITEM_IRON, 999)
+    addpcitem(ITEM_CALCIUM, 999)
+    addpcitem(ITEM_ZINC, 999)
+    addpcitem(ITEM_CARBOS, 999)
+}
+
+script Custom_Room_ForceTakePokemon {
+    msgbox(Text_CustomRoom_YouHaveToPick, MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_PLAYER, WalkUp)
+    waitmovement(LOCALID_PLAYER)
+}
+
+## Movement scripts are local so their definition won't clash with others from other script files
+movement WalkUp {
+    walk_up * 4
 }
 
 text Text_CustomRoom_DoYouWantThisPokemon {
-    format("Do I want this Pokémon?")
+    format("Do you want this Pokémon?")
 }
 
 text Text_CustomRoom_PokemonPicked {
@@ -69,5 +113,9 @@ text Text_CustomRoom_PokemonPicked {
 }
 
 text Text_CustomRoom_CannotDoThat {
-    format("I cannot do that.")
+    format("You cannot do that.")
+}
+
+text Text_CustomRoom_YouHaveToPick {
+    format("You cannot let yourself leave without picking one Pokémon.")
 }
