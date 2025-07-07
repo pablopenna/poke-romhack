@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_CUSTOM_HALL_TRAINER",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_LANCE",
       "x": 12,
       "y": 4,
       "elevation": 0,
