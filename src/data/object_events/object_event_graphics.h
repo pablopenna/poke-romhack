@@ -67,8 +67,16 @@ const u16 gObjectEventPal_Npc2Reflection[] = INCBIN_U16("graphics/object_events/
 const u16 gObjectEventPal_Npc3Reflection[] = INCBIN_U16("graphics/object_events/palettes/npc_3_reflection.gbapal");
 const u16 gObjectEventPal_Npc4Reflection[] = INCBIN_U16("graphics/object_events/palettes/npc_4_reflection.gbapal");
 // custom - firered palette imports
+const u16 gObjectEventPal_NpcRed[] = INCBIN_U16("graphics/object_events/palettes/firered/player.gbapal");
+const u16 gObjectEventPal_NpcRedReflection[] = INCBIN_U16("graphics/object_events/palettes/firered/player_reflection.gbapal");
 const u16 gObjectEventPal_NpcWhite[] = INCBIN_U16("graphics/object_events/palettes/firered/npc_white.gbapal");
 const u16 gObjectEventPal_NpcWhiteReflection[] = INCBIN_U16("graphics/object_events/palettes/firered/npc_white_reflection.gbapal");
+const u16 gObjectEventPal_NpcBlue[] = INCBIN_U16("graphics/object_events/palettes/firered/npc_blue.gbapal");
+const u16 gObjectEventPal_NpcBlueReflection[] = INCBIN_U16("graphics/object_events/palettes/firered/npc_blue_reflection.gbapal");
+const u16 gObjectEventPal_NpcGreen[] = INCBIN_U16("graphics/object_events/palettes/firered/npc_green.gbapal");
+const u16 gObjectEventPal_NpcGreenReflection[] = INCBIN_U16("graphics/object_events/palettes/firered/npc_green_reflection.gbapal");
+const u16 gObjectEventPal_NpcPink[] = INCBIN_U16("graphics/object_events/palettes/firered/npc_pink.gbapal");
+const u16 gObjectEventPal_NpcPinkReflection[] = INCBIN_U16("graphics/object_events/palettes/firered/npc_pink_reflection.gbapal");
 // custom - firered end
 const u32 gObjectEventPic_NinjaBoy[] = INCBIN_U32("graphics/object_events/pics/people/ninja_boy.4bpp");
 const u32 gObjectEventPic_Twin[] = INCBIN_U32("graphics/object_events/pics/people/twin.4bpp");
