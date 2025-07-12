@@ -33,7 +33,7 @@ Custom_Hall_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 
 Custom_Hall_Battle1::
 # 18 "data/maps/Custom_Hall/scripts.pory"
-	trainerbattle_single TRAINER_SAWYER_1, VictoryRoad_1F_Text_EdgarIntro, VictoryRoad_1F_Text_EdgarDefeat, AfterBattle
+	trainerbattle_single TRAINER_INTRO_1, VictoryRoad_1F_Text_EdgarIntro, VictoryRoad_1F_Text_EdgarDefeat, AfterBattle
 # 19 "data/maps/Custom_Hall/scripts.pory"
 	msgbox Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE
 	return

@@ -15,7 +15,7 @@ mapscripts Custom_Hall_MapScripts {
 }
 
 script Custom_Hall_Battle1 {
-    trainerbattle_single(TRAINER_SAWYER_1, VictoryRoad_1F_Text_EdgarIntro, VictoryRoad_1F_Text_EdgarDefeat, AfterBattle)
+    trainerbattle_single(TRAINER_INTRO_1, VictoryRoad_1F_Text_EdgarIntro, VictoryRoad_1F_Text_EdgarDefeat, AfterBattle)
     msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE)
 }
 

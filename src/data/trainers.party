@@ -81,6 +81,17 @@ Gender: Male
 Music: Male
 Double Battle: No
 
+=== TRAINER_INTRO_1 ===
+Name: Passo
+Pic: Cooltrainer M
+Gender: Male
+Double Battle: No
+AI: AI_FLAG_SMART_TRAINER
+
+Nidoking
+Level: 22
+IVs: 20 HP / 10 Atk / 20 Def / 10 SpA / 20 SpD / 0 Spe
+
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
 Class: Hiker
