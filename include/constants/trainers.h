@@ -108,8 +108,29 @@
 #define TRAINER_PIC_LEAF                  90
 #define TRAINER_PIC_RS_BRENDAN            91
 #define TRAINER_PIC_RS_MAY                92
+// Firered import start
 #define TRAINER_PIC_BROCK                 93
-#define TRAINER_PIC_COUNT                 94
+#define TRAINER_PIC_AGATHA                94
+#define TRAINER_PIC_BRUNO                 95
+#define TRAINER_PIC_LANCE                 96
+#define TRAINER_PIC_LORELEI               97
+#define TRAINER_PIC_BLAINE                98
+#define TRAINER_PIC_ERIKA                 99
+#define TRAINER_PIC_GIOVANNI             100
+#define TRAINER_PIC_KOGA                 101
+#define TRAINER_PIC_LTSURGE              102
+#define TRAINER_PIC_MISTY                103
+#define TRAINER_PIC_SABRINA              104
+#define TRAINER_PIC_PROFOAK              105
+#define TRAINER_PIC_EARLYBLUE            106
+#define TRAINER_PIC_LATEBLUE             107
+#define TRAINER_PIC_CHAMPIONBLUE         108
+#define TRAINER_PIC_ROCKET_F             109
+#define TRAINER_PIC_ROCKET_M             110
+#define TRAINER_PIC_FR_COOLTRAINER_F     111
+#define TRAINER_PIC_FR_COOLTRAINER_M     112
+// Firered import end
+#define TRAINER_PIC_COUNT                113
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
