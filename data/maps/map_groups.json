@@ -624,6 +624,7 @@
   ],
   "gMapGroup_Custom": [
     "Custom_Room",
-    "Custom_Hall"
+    "Custom_Hall",
+    "Custom_TestRoom"
   ]
 }
