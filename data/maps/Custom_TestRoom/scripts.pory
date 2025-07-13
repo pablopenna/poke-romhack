@@ -2,7 +2,8 @@ mapscripts Custom_TestRoom_MapScripts {}
 
 script Custom_TestRoom_BrockBattle {
     trainerbattle_single(TRAINER_BROCK, TestRoom_BrockIntro, TestRoom_BrockDefeat)
-    #trainerbattle_rematch(TRAINER_BROCK, TestRoom_BrockRematchIntro, TestRoom_BrockDefeat)
+    #call(RustboroCity_Gym_EventScript_Roxanne)
+    #call(Route118_EventScript_Rose)
 }
 
 text TestRoom_BrockIntro {

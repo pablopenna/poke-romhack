@@ -60,7 +60,7 @@
 #line 96
         .trainerName = _("Brock"),
 #line 97
-        .trainerPic = TRAINER_PIC_COOLTRAINER_M,
+        .trainerPic = TRAINER_PIC_BROCK,
         .encounterMusic_gender =
 0,
 #line 99
