@@ -92,6 +92,26 @@ Nidoking
 Level: 22
 IVs: 20 HP / 10 Atk / 20 Def / 10 SpA / 20 SpD / 0 Spe
 
+=== TRAINER_BROCK ===
+Name: Brock
+Pic: Cooltrainer M
+Gender: Male
+Double Battle: No
+Mugshot: Purple
+AI: AI_FLAG_SMART_TRAINER / AI_FLAG_WILL_SUICIDE
+
+Onix (Steelix) (M) @ Leftovers  
+Ability: Sturdy  
+Level: 20  
+Shiny: No  
+EVs: 40 HP / 140 Def / 180 SpA / 140 SpD  
+Mild Nature  
+IVs: 20 HP / 0 Atk / 15 Def / 10 SpA / 15 SpD / 0 Spe  
+- Ancient Power  
+- Sandstorm  
+- Metal Claw
+- Self-Destruct
+
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
 Class: Hiker

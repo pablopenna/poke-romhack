@@ -17,7 +17,7 @@ mapscripts Custom_Room_MapScripts {
 const POKEMON_A = SPECIES_KANGASKHAN
 const POKEMON_B = SPECIES_HERACROSS
 const POKEMON_C = SPECIES_ABSOL
-const STARTER_LEVEL = 20
+const STARTER_LEVEL = 50
 const STARTING_LEVEL_CAP = 25
 
 script Custom_Room_IntroSequence {
@@ -83,7 +83,9 @@ script(local) AcceptPokemon {
 }
 
 script(local) GiveStartingItems {
-    #giveitem(ITEM_RARE_CANDY, 999)
+    giveitem(ITEM_RARE_CANDY, 999)
+    giveitem(ITEM_POKE_BALL, 99)
+    giveitem(ITEM_MASTER_BALL, 1)
 
     addpcitem(ITEM_RARE_CANDY, 999)
     addpcitem(ITEM_HP_UP, 999)
@@ -92,6 +94,8 @@ script(local) GiveStartingItems {
     addpcitem(ITEM_CALCIUM, 999)
     addpcitem(ITEM_ZINC, 999)
     addpcitem(ITEM_CARBOS, 999)
+
+    release
 }
 
 script Custom_Room_ForceTakePokemon {
