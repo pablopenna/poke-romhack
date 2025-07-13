@@ -17,3 +17,11 @@ text TestRoom_BrockRematchIntro {
 text TestRoom_BrockDefeat {
     format("You rock!")
 }
+
+script Custom_TestRoom_LanceBattle {
+    trainerbattle_no_intro(TRAINER_LANCE, TestRoom_LanceDefeat)
+}
+
+text TestRoom_LanceDefeat {
+    format("Seems like I understimated you...")
+}

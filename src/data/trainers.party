@@ -112,6 +112,23 @@ IVs: 20 HP / 0 Atk / 15 Def / 10 SpA / 15 SpD / 0 Spe
 - Metal Claw
 - Self-Destruct
 
+=== TRAINER_LANCE ===
+Name: Lance
+Pic: Lance
+Gender: Male
+Double Battle: No
+Mugshot: Purple
+AI: AI_FLAG_SMART_TRAINER
+
+Dragonite (M) @ Salac Berry  
+Ability: Inner Focus  
+Level: 20  
+EVs: 10 HP  
+IVs: 10 HP / 10 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe  
+- Aqua Jet  
+- Dragon Dance  
+- Body Slam
+
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
 Class: Hiker
