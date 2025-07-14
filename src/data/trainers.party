@@ -129,6 +129,24 @@ IVs: 10 HP / 10 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Dragon Dance  
 - Body Slam
 
+=== TRAINER_GOLD ===
+Name: Gold
+Pic: Gold
+Gender: Male
+Double Battle: No
+Mugshot: Yellow
+AI: AI_FLAG_SMART_TRAINER
+
+Typhlosion (M) @ Salac Berry  
+Ability: Drought  
+Level: 20  
+EVs: 10 HP / 100 Atk  
+IVs: 10 HP / 10 Atk / 0 Def / 20 SpA / 0 SpD / 10 Spe  
+- Quick Attack  
+- Flame Wheel  
+- Body Slam
+- Thunder Punch
+
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
 Class: Hiker

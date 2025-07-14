@@ -14,6 +14,14 @@ Custom_TestRoom_LanceBattle::
 	return
 
 
+Custom_TestRoom_GoldBattle::
+# 30 "data/maps/Custom_TestRoom/scripts.pory"
+	msgbox TestRoom_GoldDefeat, MSGBOX_AUTOCLOSE
+# 31 "data/maps/Custom_TestRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_GOLD, TestRoom_GoldDefeat
+	return
+
+
 TestRoom_BrockIntro::
 # 9 "data/maps/Custom_TestRoom/scripts.pory"
 	.string "I'm Brock, one of Kanto's Big Eight. Be\n"
@@ -30,3 +38,7 @@ TestRoom_BrockDefeat::
 TestRoom_LanceDefeat::
 # 25 "data/maps/Custom_TestRoom/scripts.pory"
 	.string "Seems like I understimated you...$"
+
+TestRoom_GoldDefeat::
+# 34 "data/maps/Custom_TestRoom/scripts.pory"
+	.string "...$"

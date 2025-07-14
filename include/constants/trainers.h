@@ -129,8 +129,9 @@
 #define TRAINER_PIC_ROCKET_M             110
 #define TRAINER_PIC_FR_COOLTRAINER_F     111
 #define TRAINER_PIC_FR_COOLTRAINER_M     112
+#define TRAINER_PIC_GOLD                 113
 // Firered import end
-#define TRAINER_PIC_COUNT                113
+#define TRAINER_PIC_COUNT                114
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

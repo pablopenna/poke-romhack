@@ -25,3 +25,12 @@ script Custom_TestRoom_LanceBattle {
 text TestRoom_LanceDefeat {
     format("Seems like I understimated you...")
 }
+
+script Custom_TestRoom_GoldBattle {
+    msgbox(TestRoom_GoldDefeat, MSGBOX_AUTOCLOSE)
+    trainerbattle_no_intro(TRAINER_GOLD, TestRoom_GoldDefeat)
+}
+
+text TestRoom_GoldDefeat {
+    format("...")
+}
