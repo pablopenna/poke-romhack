@@ -23,7 +23,7 @@ Custom_Hall_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE_0:
 # 9 "data/maps/Custom_Hall/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 10 "data/maps/Custom_Hall/scripts.pory"
-	msgbox Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE
+	msgbox Text_CustomHall_ItIsDone, MSGBOX_AUTOCLOSE
 # 11 "data/maps/Custom_Hall/scripts.pory"
 	fadescreen FADE_FROM_BLACK
 # 12 "data/maps/Custom_Hall/scripts.pory"
@@ -35,7 +35,7 @@ Custom_Hall_Battle1::
 # 18 "data/maps/Custom_Hall/scripts.pory"
 	trainerbattle_single TRAINER_INTRO_1, VictoryRoad_1F_Text_EdgarIntro, VictoryRoad_1F_Text_EdgarDefeat, AfterBattle
 # 19 "data/maps/Custom_Hall/scripts.pory"
-	msgbox Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE
+	msgbox Text_CustomHall_ItIsDone, MSGBOX_AUTOCLOSE
 	return
 
 
@@ -84,7 +84,7 @@ Custom_Hall_Encounter1::
 # 49 "data/maps/Custom_Hall/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 50 "data/maps/Custom_Hall/scripts.pory"
-	msgbox Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE
+	msgbox Text_CustomHall_ItIsDone, MSGBOX_AUTOCLOSE
 # 51 "data/maps/Custom_Hall/scripts.pory"
 	setflag FLAG_TEMP_2
 # 52 "data/maps/Custom_Hall/scripts.pory"
@@ -100,3 +100,7 @@ Custom_Hall_Encounter1::
 Custom_Hall_Encounter1_2:
 	return
 
+
+Text_CustomHall_ItIsDone::
+# 58 "data/maps/Custom_Hall/scripts.pory"
+	.string "It is done$"

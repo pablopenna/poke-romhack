@@ -7,7 +7,7 @@ mapscripts Custom_Hall_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
 		VAR_TEMP_5, 1 {
             fadescreen(FADE_TO_BLACK)
-            msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE)
+            msgbox(Text_CustomHall_ItIsDone, MSGBOX_AUTOCLOSE)
             fadescreen(FADE_FROM_BLACK)
             setvar(VAR_TEMP_5, 0)
         }
@@ -16,7 +16,7 @@ mapscripts Custom_Hall_MapScripts {
 
 script Custom_Hall_Battle1 {
     trainerbattle_single(TRAINER_INTRO_1, VictoryRoad_1F_Text_EdgarIntro, VictoryRoad_1F_Text_EdgarDefeat, AfterBattle)
-    msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE)
+    msgbox(Text_CustomHall_ItIsDone, MSGBOX_AUTOCLOSE)
 }
 
 script(local) AfterBattle {
@@ -47,10 +47,14 @@ script Custom_Hall_Encounter1 {
         return
     }
     fadescreen(FADE_TO_BLACK)
-    msgbox(Text_CustomRoom_PokemonPicked, MSGBOX_AUTOCLOSE)
+    msgbox(Text_CustomHall_ItIsDone, MSGBOX_AUTOCLOSE)
     setflag(FLAG_TEMP_2)
     removeobject(LOCALID_CUSTOM_HALL_OBSTACLE_1)
     removeobject(LOCALID_CUSTOM_HALL_OBSTACLE_2)
     removeobject(LOCALID_CUSTOM_HALL_WILDMON1)
     fadescreen(FADE_FROM_BLACK)
+}
+
+text Text_CustomHall_ItIsDone {
+    format("It is done")
 }

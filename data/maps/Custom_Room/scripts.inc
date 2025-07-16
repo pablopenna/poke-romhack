@@ -180,17 +180,19 @@ WalkUp:
 
 Text_CustomRoom_DoYouWantThisPokemon::
 # 112 "data/maps/Custom_Room/scripts.pory"
-	.string "Do you want this Pokémon?$"
+	.string "You reach out, uncertain.\n"
+	.string "Will you take this Pokémon?$"
 
 Text_CustomRoom_PokemonPicked::
-# 116 "data/maps/Custom_Room/scripts.pory"
-	.string "It is done.$"
+# 118 "data/maps/Custom_Room/scripts.pory"
+	.string "A part of you clings to this choice.\n"
+	.string "You feel… a little more whole.$"
 
 Text_CustomRoom_CannotDoThat::
-# 120 "data/maps/Custom_Room/scripts.pory"
-	.string "You cannot do that.$"
+# 124 "data/maps/Custom_Room/scripts.pory"
+	.string "You made your choice.\n"
+	.string "You can't turn back now.$"
 
 Text_CustomRoom_YouHaveToPick::
-# 124 "data/maps/Custom_Room/scripts.pory"
-	.string "You cannot let yourself leave without\n"
-	.string "picking one Pokémon.$"
+# 128 "data/maps/Custom_Room/scripts.pory"
+	.string "Something is missing.$"

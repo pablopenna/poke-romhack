@@ -110,17 +110,21 @@ movement WalkUp {
 }
 
 text Text_CustomRoom_DoYouWantThisPokemon {
-    format("Do you want this Pokémon?")
+    #format("Do you want this Pokémon?")
+    "You reach out, uncertain.\n"
+    "Will you take this Pokémon?"
 }
 
 text Text_CustomRoom_PokemonPicked {
-    format("It is done.")
+    #format("It is done.")
+    "A part of you clings to this choice.\n"
+    "You feel… a little more whole."
 }
 
 text Text_CustomRoom_CannotDoThat {
-    format("You cannot do that.")
+    format("You made your choice.\nYou can't turn back now.")
 }
 
 text Text_CustomRoom_YouHaveToPick {
-    format("You cannot let yourself leave without picking one Pokémon.")
+    format("Something is missing.")
 }
