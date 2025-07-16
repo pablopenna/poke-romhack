@@ -158,6 +158,17 @@ AI: AI_FLAG_SMART_TRAINER
 Meganium
 Level: 20  
 
+=== TRAINER_SILVER ===
+Name: Silver
+Pic: Silver
+Gender: Male
+Double Battle: No
+Mugshot: Purple
+AI: AI_FLAG_SMART_TRAINER
+
+Weavile
+Level: 20 
+
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
 Class: Hiker

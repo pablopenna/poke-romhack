@@ -439,6 +439,10 @@ static const struct SpriteFrameImage sPicTable_Gold[] = {
 static const struct SpriteFrameImage sPicTable_Crystal[] = {
     overworld_ascending_frames(gObjectEventPic_Crystal, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Silver[] = {
+    overworld_ascending_frames(gObjectEventPic_Silver, 2, 4),
+};
 // FireRed import end
 
 static const struct SpriteFrameImage sPicTable_UnusedNatuDoll[] = {

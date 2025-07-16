@@ -195,6 +195,7 @@ const u32 gObjectEventPic_FR_May[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Sabrina[] = INCBIN_U32("graphics/object_events/pics/people/firered/sabrina.4bpp");
 const u32 gObjectEventPic_Gold[] = INCBIN_U32("graphics/object_events/pics/people/goldsilver/gold.4bpp");
 const u32 gObjectEventPic_Crystal[] = INCBIN_U32("graphics/object_events/pics/people/goldsilver/crystal.4bpp");
+const u32 gObjectEventPic_Silver[] = INCBIN_U32("graphics/object_events/pics/people/goldsilver/silver.4bpp");
 // Custom - FireRed import END
 const u32 gObjectEventPic_LatiasLatios[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/latias_latios.4bpp");
 const u32 gObjectEventPic_GameboyKid[] = INCBIN_U32("graphics/object_events/pics/people/gameboy_kid.4bpp");

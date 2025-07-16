@@ -28,6 +28,12 @@ Custom_TestRoom_CrystalBattle::
 	return
 
 
+Custom_TestRoom_SilverBattle::
+# 47 "data/maps/Custom_TestRoom/scripts.pory"
+	trainerbattle_no_intro TRAINER_SILVER, TestRoom_SilverDefeat
+	return
+
+
 TestRoom_BrockIntro::
 # 9 "data/maps/Custom_TestRoom/scripts.pory"
 	.string "I'm Brock, one of Kanto's Big Eight. Be\n"
@@ -51,4 +57,8 @@ TestRoom_GoldDefeat::
 
 TestRoom_CrystalDefeat::
 # 42 "data/maps/Custom_TestRoom/scripts.pory"
+	.string "...$"
+
+TestRoom_SilverDefeat::
+# 50 "data/maps/Custom_TestRoom/scripts.pory"
 	.string "...$"

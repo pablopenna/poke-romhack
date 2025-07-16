@@ -42,3 +42,11 @@ script Custom_TestRoom_CrystalBattle {
 text TestRoom_CrystalDefeat {
     format("...")
 }
+
+script Custom_TestRoom_SilverBattle {
+    trainerbattle_no_intro(TRAINER_SILVER, TestRoom_SilverDefeat)
+}
+
+text TestRoom_SilverDefeat {
+    format("...")
+}

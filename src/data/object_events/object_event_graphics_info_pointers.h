@@ -165,6 +165,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FR_May;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sabrina;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gold;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Crystal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Silver;
 // FireRed imports end
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSTidal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SubmarineShadow;
@@ -447,6 +448,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SABRINA] =                  &gObjectEventGraphicsInfo_Sabrina,
     [OBJ_EVENT_GFX_GOLD] =                     &gObjectEventGraphicsInfo_Gold,
     [OBJ_EVENT_GFX_CRYSTAL] =                  &gObjectEventGraphicsInfo_Crystal,
+    [OBJ_EVENT_GFX_SILVER] =                   &gObjectEventGraphicsInfo_Silver,
     // FireRed imports end
     [OBJ_EVENT_GFX_SS_TIDAL] =                 &gObjectEventGraphicsInfo_SSTidal,
     [OBJ_EVENT_GFX_SUBMARINE_SHADOW] =         &gObjectEventGraphicsInfo_SubmarineShadow,

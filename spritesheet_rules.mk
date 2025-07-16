@@ -486,6 +486,9 @@ $(OBJEVENTGFXDIR)/people/goldsilver/gold.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/goldsilver/crystal.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/goldsilver/silver.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 # Custom - Firered imports end
 
 $(OBJEVENTGFXDIR)/pokemon_old/azumarill.4bpp: %.4bpp: %.png
