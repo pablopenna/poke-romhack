@@ -147,6 +147,17 @@ IVs: 10 HP / 10 Atk / 0 Def / 20 SpA / 0 SpD / 10 Spe
 - Body Slam
 - Thunder Punch
 
+=== TRAINER_CRYSTAL ===
+Name: Crystal
+Pic: Crystal
+Gender: Female
+Double Battle: No
+Mugshot: Yellow
+AI: AI_FLAG_SMART_TRAINER
+
+Meganium
+Level: 20  
+
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
 Class: Hiker

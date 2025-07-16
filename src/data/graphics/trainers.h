@@ -323,6 +323,8 @@ const u32 gTrainerFrontPic_RocketM[] = INCBIN_U32("graphics/trainers/front_pics/
 const u16 gTrainerPalette_RocketM[] = INCBIN_U16("graphics/trainers/front_pics/firered/rocket_grunt_m_front_pic.gbapal");
 const u32 gTrainerFrontPic_Gold[] = INCBIN_U32("graphics/trainers/front_pics/goldsilver/gold_front_pic.4bpp.lz");
 const u16 gTrainerPalette_Gold[] = INCBIN_U16("graphics/trainers/front_pics/goldsilver/gold_front_pic.gbapal");
+const u32 gTrainerFrontPic_Crystal[] = INCBIN_U32("graphics/trainers/front_pics/goldsilver/crystal_front_pic.4bpp.lz");
+const u16 gTrainerPalette_Crystal[] = INCBIN_U16("graphics/trainers/front_pics/goldsilver/crystal_front_pic.gbapal");
 // Firered import end
 
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
@@ -468,6 +470,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FR_COOLTRAINER_F, gTrainerFrontPic_FR_CooltrainerF, gTrainerPalette_FR_CooltrainerF),
     TRAINER_SPRITE(TRAINER_PIC_FR_COOLTRAINER_M, gTrainerFrontPic_FR_CooltrainerM, gTrainerPalette_FR_CooltrainerM),
     TRAINER_SPRITE(TRAINER_PIC_GOLD, gTrainerFrontPic_Gold, gTrainerPalette_Gold),
+    TRAINER_SPRITE(TRAINER_PIC_CRYSTAL, gTrainerFrontPic_Crystal, gTrainerPalette_Crystal),
     // Firered import end
 };
 

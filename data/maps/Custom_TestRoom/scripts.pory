@@ -34,3 +34,11 @@ script Custom_TestRoom_GoldBattle {
 text TestRoom_GoldDefeat {
     format("...")
 }
+
+script Custom_TestRoom_CrystalBattle {
+    trainerbattle_no_intro(TRAINER_CRYSTAL, TestRoom_CrystalDefeat)
+}
+
+text TestRoom_CrystalDefeat {
+    format("...")
+}
