@@ -4440,6 +4440,16 @@
       "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/Custom_TestRoom/border.bin",
       "blockdata_filepath": "data/layouts/Custom_TestRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_LITTLE_ROOT",
+      "name": "Custom_Hoenn_LittleRoot_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Custom_Hoenn_LittleRoot/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_LittleRoot/map.bin"
     }
   ]
 }

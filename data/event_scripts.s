@@ -1164,3 +1164,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Custom_Hall/scripts.inc"
 
 	.include "data/maps/Custom_TestRoom/scripts.inc"
+
+	.include "data/maps/Custom_Hoenn_LittleRoot/scripts.inc"
