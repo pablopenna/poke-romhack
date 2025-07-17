@@ -4450,6 +4450,26 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Custom_Hoenn_LittleRoot/border.bin",
       "blockdata_filepath": "data/layouts/Custom_Hoenn_LittleRoot/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_PLAYER_HOUSE",
+      "name": "Custom_Hoenn_Player_House_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/Custom_Hoenn_Player_House/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_Player_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_PLAYER_HOUSE_1F",
+      "name": "Custom_Hoenn_Player_House_1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/Custom_Hoenn_Player_House_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_Player_House_1F/map.bin"
     }
   ]
 }

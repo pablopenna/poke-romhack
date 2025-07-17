@@ -1,0 +1,9 @@
+mapscripts Custom_Hoenn_Player_House_MapScripts {}
+
+script Custom_TV {
+    msgbox(Text_Custom_TV, MSGBOX_AUTOCLOSE)
+}
+
+text Text_Custom_TV {
+    format("It's turned off... but you hear static anyway.")
+}

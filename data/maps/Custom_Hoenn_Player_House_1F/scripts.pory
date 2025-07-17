@@ -1,0 +1,36 @@
+mapscripts Custom_Hoenn_Player_House_1F_MapScripts {}
+
+script Custom_Wallclock_Script {
+    if (flag(FLAG_SET_WALL_CLOCK)) {
+        call(Custom_CheckWallClock)
+    }
+    msgbox(Text_Custom_SetClockText_Before, MSGBOX_AUTOCLOSE)
+	call(Custom_SetWallClock)
+    setflag(FLAG_SET_WALL_CLOCK)
+    msgbox(Text_Custom_SetClockText_After, MSGBOX_AUTOCLOSE)
+	releaseall
+	end
+}
+
+script(local) Custom_CheckWallClock{
+    # incrementgamestat GAME_STAT_CHECKED_CLOCK
+	fadescreen(FADE_TO_BLACK)
+	special(Special_ViewWallClock)
+	waitstate
+	releaseall
+}
+
+script(local) Custom_SetWallClock {
+    fadescreen(FADE_TO_BLACK)
+	special(StartWallClock)
+	waitstate
+	return
+}
+
+text Text_Custom_SetClockText_Before {
+    format("The world is still.\nYou move the clock.")
+}
+
+text Text_Custom_SetClockText_After {
+    format("You adjust the clock. As if pretending time still matters.")
+}

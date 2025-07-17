@@ -1,0 +1,45 @@
+{
+  "id": "MAP_CUSTOM_HOENN_PLAYER_HOUSE_1F",
+  "name": "Custom_Hoenn_Player_House_1F",
+  "layout": "LAYOUT_CUSTOM_HOENN_PLAYER_HOUSE_1F",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_CUSTOM_HOENN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 12,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_CUSTOM_HOENN_PLAYER_HOUSE",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Custom_Wallclock_Script"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Custom_TV"
+    }
+  ]
+}
