@@ -1170,3 +1170,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Custom_Hoenn_Player_House/scripts.inc"
 
 	.include "data/maps/Custom_Hoenn_Player_House_1F/scripts.inc"
+
+	.include "data/maps/Custom_Hoenn_Route101/scripts.inc"

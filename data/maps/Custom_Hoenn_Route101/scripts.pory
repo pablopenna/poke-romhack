@@ -1,0 +1,32 @@
+mapscripts Custom_Hoenn_Route101_MapScripts {}
+
+script Custom_Route101_Rocket {
+    trainerbattle_single(TRAINER_INTRO_1, Text_Custom_Intro_RocketIntro, Text_Custom_Intro_RocketDefeat, AfterBattleRocketBattle)
+}
+
+script(local) AfterBattleRocketBattle {
+    fadescreen(FADE_TO_BLACK)
+    fadescreen(FADE_FROM_BLACK)
+}
+
+text Text_Custom_Intro_RocketIntro {
+    format(
+        "Hey... I was supposed to be stealing Pokémon for my boss, but I got lost.\p
+        This place... it's not like anything I've seen before.\p
+        Maybe you can help me find my way out? I don't want to get caught wandering here forever\p
+        ...\n
+        ...\p
+        Wait a minute. You're a trainer, aren't you?\p
+        Well, then... I guess I don't need  your help. I'm here to take your Pokémon too!"
+    )
+}
+
+text Text_Custom_Intro_RocketDefeat {
+    # "Not bad... You're stronger than I thought."
+    #"This place... it's messing with all of us. Maybe we're both lost."
+    format(
+        "Aren't you too strong for a kid? You're better than I thought.\p
+        Nevermind, I'll find the way out on my own.\p
+        Don't think this is over. The Team Rocket always gets what we want."
+    )
+}
