@@ -1,1 +1,60 @@
 mapscripts Custom_Hoenn_LittleRoot_MapScripts {}
+
+script Custom_LittleRoot_PlayerReflection {
+    playbgm(MUS_DUMMY, FALSE)
+    applymovement(LOCALID_PLAYER_REFLECTION, moves(
+        face_player
+    ))
+    msgbox(Text_Custom_LittleRoot_PlayerReflection, MSGBOX_AUTOCLOSE)
+    applymovement(LOCALID_PLAYER_REFLECTION, moves(
+        face_up
+    ))
+    playbgm(MUS_LITTLEROOT, FALSE)
+}
+
+script Custom_LittleRoot_LittleKid {
+    applymovement(LOCALID_LITTLEKID, moves(
+        face_player
+    ))
+    msgbox(Text_Custom_LittleRoot_LittleKid, MSGBOX_AUTOCLOSE)
+}
+
+script Custom_LittleRoot_PlayerHouseSign {
+    msgbox(Text_Custom_LittleRoot_Sign_Player_House, MSGBOX_AUTOCLOSE)
+}
+
+script Custom_LittleRoot_RivalHouseSign {
+    msgbox(Text_Custom_LittleRoot_Sign_Rival_House, MSGBOX_AUTOCLOSE)
+}
+
+script Custom_LittleRoot_RivalHouseDoor {
+    msgbox(Text_Custom_LittleRoot_Rival_House_Door, MSGBOX_AUTOCLOSE)
+}
+
+script Custom_LittleRoot_LabSign {
+    msgbox(Text_Custom_LittleRoot_Sign_Lab, MSGBOX_AUTOCLOSE)
+}
+
+text Text_Custom_LittleRoot_PlayerReflection {
+    format("You remember how this goes, don't you?")
+}
+
+text Text_Custom_LittleRoot_LittleKid {
+    format("You're late again… weren't you?\nNo… I think you were early.")
+}
+
+text Text_Custom_LittleRoot_Sign_Lab {
+    format("The sign says: 'Pokémon Lab.' But you're not sure that's what it really is.")
+}
+
+text Text_Custom_LittleRoot_Sign_Player_House {
+    format("The sign says that… you live here? That can't be right.")
+}
+
+text Text_Custom_LittleRoot_Sign_Rival_House {
+    format("The text in the sign is smudged.")
+}
+
+text Text_Custom_LittleRoot_Rival_House_Door {
+    format("The handle is cold. You let go.")
+}
