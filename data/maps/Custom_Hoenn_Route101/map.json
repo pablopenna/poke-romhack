@@ -77,5 +77,14 @@
   ],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 19,
+      "y": 2,
+      "elevation": 0,
+      "item": "ITEM_MOOMOO_MILK",
+      "flag": "FLAG_HIDDEN_ITEM_CUSTOM_HOENN_ROUTE_101"
+    }
+  ]
 }
