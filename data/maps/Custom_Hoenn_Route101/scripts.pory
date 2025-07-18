@@ -4,8 +4,30 @@ script Custom_Route101_Rocket {
     trainerbattle_single(TRAINER_INTRO_1, Text_Custom_Intro_RocketIntro, Text_Custom_Intro_RocketDefeat, AfterBattleRocketBattle)
 }
 
+script Custom_Route101_MartEmployee {
+    lock
+    applymovement(LOCAL_ID_MARTEMPLOYEE, moves(
+        face_player
+    ))
+    if (!flag(FLAG_CUSTOM_RECEIVED_SAMPLE_ROUTE_101)) {
+        msgbox(Text_Custom_Route101_MartEmployee1, MSGBOX_AUTOCLOSE)
+        giveitem(ITEM_POKE_BALL, 20)
+        # giving item resets lock on NPC so if it has LOOK_AROUND it will start looking around again
+        applymovement(LOCAL_ID_MARTEMPLOYEE, moves(
+            face_player
+        ))
+        setflag(FLAG_CUSTOM_RECEIVED_SAMPLE_ROUTE_101)
+    }
+    msgbox(Text_Custom_Route101_MartEmployee2, MSGBOX_AUTOCLOSE)
+    release
+}
+
 script(local) AfterBattleRocketBattle {
+    msgbox(Text_Custom_Intro_RocketDefeat2, MSGBOX_AUTOCLOSE)
     fadescreen(FADE_TO_BLACK)
+    setflag(FLAG_CUSTOM_INTRO_ROCKET_DEFEATED)
+    playse(SE_EXIT)
+    removeobject(LOCALID_ROCKET)
     fadescreen(FADE_FROM_BLACK)
 }
 
@@ -25,8 +47,26 @@ text Text_Custom_Intro_RocketDefeat {
     # "Not bad... You're stronger than I thought."
     #"This place... it's messing with all of us. Maybe we're both lost."
     format(
-        "Aren't you too strong for a kid? You're better than I thought.\p
-        Nevermind, I'll find the way out on my own.\p
-        Don't think this is over. The Team Rocket always gets what we want."
+        "Aren't you too strong for a kid? You're better than I thought."
+    )
+}
+
+text Text_Custom_Intro_RocketDefeat2 {
+    format(
+        "Nevermind, I'll find the way out on my own.\p
+        Don't think this is over. The Team Rocket always gets what they want!"
+    )
+}
+
+text Text_Custom_Route101_MartEmployee1 {
+    format(
+        "Oh! Finally! A potential customer! I haven't seen any in a long time.\p
+        Here, take this. On the house!"
+    )
+}
+
+text Text_Custom_Route101_MartEmployee2 {
+    format(
+        "When you get the chance, check out one of our stores! We're always open!"
     )
 }
