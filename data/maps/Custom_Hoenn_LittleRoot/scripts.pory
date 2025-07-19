@@ -1,4 +1,13 @@
-mapscripts Custom_Hoenn_LittleRoot_MapScripts {}
+const VAR_ENABLE_LITTLE_KID_EVENT = VAR_TEMP_0
+
+mapscripts Custom_Hoenn_LittleRoot_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_ENABLE_LITTLE_KID_EVENT, FALSE)
+        if(!flag(FLAG_SET_WALL_CLOCK)) {
+            setvar(VAR_ENABLE_LITTLE_KID_EVENT, TRUE)
+        }
+    }
+}
 
 script Custom_LittleRoot_PlayerReflection {
     playbgm(MUS_DUMMY, FALSE)
@@ -12,11 +21,54 @@ script Custom_LittleRoot_PlayerReflection {
     playbgm(MUS_LITTLEROOT, FALSE)
 }
 
+script Custom_LittleRoot_LittleKid_Event_Left {
+    lockall
+    applymovement(LOCALID_LITTLEKID, moves(
+        face_right
+        emote_exclamation_mark
+    ))
+    playse(SE_PIN)
+    call(Custom_LittleRoot_LittleKid)
+    applymovement(LOCALID_LITTLEKID, moves(
+        face_down
+    ))
+    applymovement(LOCALID_PLAYER, moves(
+        walk_down
+    ))
+    waitmovement
+    releaseall
+}
+
+script Custom_LittleRoot_LittleKid_Event_Right {
+    lockall
+    applymovement(LOCALID_LITTLEKID, moves(
+        face_right
+        emote_exclamation_mark
+        walk_right
+    ))
+    playse(SE_PIN)
+    waitmovement
+    call(Custom_LittleRoot_LittleKid)
+    applymovement(LOCALID_LITTLEKID, moves(
+        walk_left
+        face_down
+    ))
+    applymovement(LOCALID_PLAYER, moves(
+        walk_down
+    ))
+    waitmovement
+    releaseall
+}
+
 script Custom_LittleRoot_LittleKid {
     applymovement(LOCALID_LITTLEKID, moves(
         face_player
     ))
-    msgbox(Text_Custom_LittleRoot_LittleKid, MSGBOX_AUTOCLOSE)
+    if(var(VAR_ENABLE_LITTLE_KID_EVENT)) {
+        msgbox(Text_Custom_LittleRoot_LittleKid_Event, MSGBOX_AUTOCLOSE)
+    } else {
+        msgbox(Text_Custom_LittleRoot_LittleKid, MSGBOX_AUTOCLOSE)
+    }
 }
 
 script Custom_LittleRoot_PlayerHouseSign {
@@ -41,6 +93,13 @@ text Text_Custom_LittleRoot_PlayerReflection {
 
 text Text_Custom_LittleRoot_LittleKid {
     format("You're late again… weren't you?\nNo… I think you were early.")
+}
+
+text Text_Custom_LittleRoot_LittleKid_Event {
+    format(
+        "The clock in your room isn't right.\p
+        It stopped after you left… You should fix it."
+    )
 }
 
 text Text_Custom_LittleRoot_Sign_Lab {

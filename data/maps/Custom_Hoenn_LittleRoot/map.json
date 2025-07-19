@@ -65,7 +65,26 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "Custom_LittleRoot_LittleKid_Event_Left"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "1",
+      "script": "Custom_LittleRoot_LittleKid_Event_Right"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
