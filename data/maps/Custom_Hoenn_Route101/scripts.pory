@@ -1,7 +1,13 @@
-mapscripts Custom_Hoenn_Route101_MapScripts {}
+const VAR_SHOULD_TRIGGER_ROCKET_EVENT = VAR_TEMP_0
+const VAR_IS_PLAYER_ON_THE_RIGHT = VAR_TEMP_1
 
-script Custom_Route101_Rocket {
-    trainerbattle_single(TRAINER_INTRO_1, Text_Custom_Intro_RocketIntro, Text_Custom_Intro_RocketDefeat, AfterBattleRocketBattle)
+mapscripts Custom_Hoenn_Route101_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        setvar(VAR_SHOULD_TRIGGER_ROCKET_EVENT, FALSE)
+        if(!flag(FLAG_CUSTOM_INTRO_ROCKET_DEFEATED)) {
+            setvar(VAR_SHOULD_TRIGGER_ROCKET_EVENT, TRUE) # Needed as triggers need a variable and don't work with a flag
+        }
+    }
 }
 
 script Custom_Route101_MartEmployee {
@@ -22,13 +28,63 @@ script Custom_Route101_MartEmployee {
     release
 }
 
-script(local) AfterBattleRocketBattle {
+script Custom_Route101_Rocket_Left {
+    setvar(VAR_IS_PLAYER_ON_THE_RIGHT, FALSE)
+    call(Custom_Route101_Rocket)
+}
+
+script Custom_Route101_Rocket_Right {
+    setvar(VAR_IS_PLAYER_ON_THE_RIGHT, TRUE)
+    call(Custom_Route101_Rocket)
+}
+
+script(local) Custom_Route101_Rocket {
+    lockall
+    setvar(VAR_SHOULD_TRIGGER_ROCKET_EVENT, FALSE) # Prevent from triggering again
+    
+    delay(20)
+    applymovement(LOCALID_ROCKET, moves(
+        face_down
+    ))
+    waitmovement
+    delay(20)
+    applymovement(LOCALID_PLAYER, moves(
+        face_up,
+        emote_exclamation_mark,
+    ))
+    playse(SE_PIN)
+    waitmovement
+
+    playbgm(MUS_RG_ENCOUNTER_ROCKET, FALSE)
+    
+    applymovement(LOCALID_ROCKET, moves(
+        walk_down * 3
+    ))
+    waitmovement
+    if(var(VAR_IS_PLAYER_ON_THE_RIGHT)) {
+        applymovement(LOCALID_ROCKET, moves(
+            walk_down,
+            walk_in_place_fast_right,
+            face_player,
+        ))
+        waitmovement
+        applymovement(LOCALID_PLAYER, moves(
+            walk_in_place_fast_left,
+        ))
+        waitmovement
+    }
+    msgbox(Text_Custom_Intro_RocketIntro, MSGBOX_AUTOCLOSE)
+    
+    trainerbattle_no_intro(TRAINER_INTRO_1, Text_Custom_Intro_RocketDefeat)
+
     msgbox(Text_Custom_Intro_RocketDefeat2, MSGBOX_AUTOCLOSE)
     fadescreen(FADE_TO_BLACK)
     setflag(FLAG_CUSTOM_INTRO_ROCKET_DEFEATED)
     playse(SE_EXIT)
     removeobject(LOCALID_ROCKET)
+    delay(10)
     fadescreen(FADE_FROM_BLACK)
+    releaseall
 }
 
 text Text_Custom_Intro_RocketIntro {
@@ -44,8 +100,6 @@ text Text_Custom_Intro_RocketIntro {
 }
 
 text Text_Custom_Intro_RocketDefeat {
-    # "Not bad... You're stronger than I thought."
-    #"This place... it's messing with all of us. Maybe we're both lost."
     format(
         "Aren't you too strong for a kid? You're better than I thought."
     )
