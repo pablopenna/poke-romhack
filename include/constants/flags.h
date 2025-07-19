@@ -743,9 +743,9 @@
 #define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
 #define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
 #define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
 
 // Event Flags
+#define FLAG_CUSTOM_HOENN_LITTLEROOT_HIDE_REFLECTION                0x2BA
 #define FLAG_CUSTOM_INTRO_ROCKET_DEFEATED                           0x2BB
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
 #define FLAG_HIDE_APPRENTICE                                        0x2BD

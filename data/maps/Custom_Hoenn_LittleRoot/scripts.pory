@@ -1,7 +1,8 @@
 const VAR_ENABLE_LITTLE_KID_EVENT = VAR_TEMP_0
 
 mapscripts Custom_Hoenn_LittleRoot_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION {
+    # https://github.com/pret/pokeemerald/wiki/The-Basics-of-Scripting#Map-Scripts
+    MAP_SCRIPT_ON_LOAD {
         setvar(VAR_ENABLE_LITTLE_KID_EVENT, FALSE)
         if(!flag(FLAG_SET_WALL_CLOCK)) {
             setvar(VAR_ENABLE_LITTLE_KID_EVENT, TRUE)
@@ -19,6 +20,7 @@ script Custom_LittleRoot_PlayerReflection {
         face_up
     ))
     playbgm(MUS_LITTLEROOT, FALSE)
+    setflag(FLAG_CUSTOM_HOENN_LITTLEROOT_HIDE_REFLECTION)
 }
 
 script Custom_LittleRoot_LittleKid_Event_Left {
