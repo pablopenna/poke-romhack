@@ -1,0 +1,27 @@
+mapscripts Custom_Hoenn_PokeCenter_MapScripts {}
+
+script Custom_Hoenn_PokeCenter_Heal {
+    hidefollower(0)
+	call(Custom_Hoenn_PokeCenter_AdjustPosition)
+	dofieldeffect(FLDEFF_POKECENTER_HEAL)
+	waitfieldeffect(FLDEFF_POKECENTER_HEAL)
+	special(HealPlayerParty)
+	call(Custom_Hoenn_PokeCenter_GoBack)
+	callnative(UpdateFollowingPokemon)
+}
+
+script(local) Custom_Hoenn_PokeCenter_AdjustPosition {
+	applymovement(LOCALID_PLAYER, moves(
+		walk_down * 2
+		face_up
+	))
+	waitmovement
+}
+
+script(local) Custom_Hoenn_PokeCenter_GoBack {
+	applymovement(LOCALID_PLAYER, moves(
+		walk_up * 2
+		face_left
+	))
+	waitmovement
+}

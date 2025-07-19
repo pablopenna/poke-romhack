@@ -1176,3 +1176,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Custom_Hoenn_Oldale/scripts.inc"
 
 	.include "data/maps/Custom_Hoenn_Mart/scripts.inc"
+
+	.include "data/maps/Custom_Hoenn_PokeCenter/scripts.inc"

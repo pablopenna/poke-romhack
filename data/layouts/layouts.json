@@ -4500,6 +4500,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/Custom_Hoenn_Mart/border.bin",
       "blockdata_filepath": "data/layouts/Custom_Hoenn_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_POKE_CENTER",
+      "name": "Custom_Hoenn_PokeCenter_Layout",
+      "width": 14,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/Custom_Hoenn_PokeCenter/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_PokeCenter/map.bin"
     }
   ]
 }
