@@ -1,0 +1,65 @@
+{
+  "id": "MAP_CUSTOM_HOENN_OLDALE",
+  "name": "Custom_Hoenn_Oldale",
+  "layout": "LAYOUT_CUSTOM_HOENN_OLDALE",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_CUSTOM_HOENN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_CUSTOM_HOENN_ROUTE101",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_CUSTOM_HOENN_ROUTE101",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_CUSTOM_HOENN_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_CUSTOM_HOENN_MART",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Custom_Set_Dynamic_Warp_Oldale_Mart"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Custom_Set_Dynamic_Warp_Oldale_PokeCenter"
+    }
+  ],
+  "bg_events": []
+}

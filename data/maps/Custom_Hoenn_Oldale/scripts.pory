@@ -1,0 +1,13 @@
+mapscripts Custom_Hoenn_Oldale_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        setvar(VAR_TEMP_0, 0)
+    }
+}
+
+script Custom_Set_Dynamic_Warp_Oldale_Mart {
+    setdynamicwarp(MAP_CUSTOM_HOENN_MART, 14, 7) # Entrance of the mart
+}
+
+script Custom_Set_Dynamic_Warp_Oldale_PokeCenter {
+    setdynamicwarp(MAP_CUSTOM_HOENN_MART, 6, 17)
+}

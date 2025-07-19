@@ -4480,6 +4480,26 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Custom_Hoenn_Route101/border.bin",
       "blockdata_filepath": "data/layouts/Custom_Hoenn_Route101/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_OLDALE",
+      "name": "Custom_Hoenn_Oldale_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Custom_Hoenn_Oldale/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_Oldale/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_MART",
+      "name": "Custom_Hoenn_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/Custom_Hoenn_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_Mart/map.bin"
     }
   ]
 }

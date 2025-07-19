@@ -1,0 +1,23 @@
+mapscripts Custom_Hoenn_Mart_MapScripts {}
+
+script Custom_Hoenn_Mart_Script {
+    lock
+    faceplayer
+    message(gText_HowMayIServeYou)
+    waitmessage
+    pokemart(Custom_Hoenn_Mart_0)
+    msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    release
+}
+
+mart Custom_Hoenn_Mart_0{
+    ITEM_POTION
+    ITEM_POKE_BALL
+}
+
+mart Custom_Hoenn_Mart_1{
+    ITEM_POTION
+    ITEM_SUPER_POTION
+    ITEM_POKE_BALL
+    ITEM_GREAT_BALL
+}
