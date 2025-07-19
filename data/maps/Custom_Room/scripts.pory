@@ -95,7 +95,7 @@ script(local) GiveStartingItems {
     addpcitem(ITEM_CALCIUM, 999)
     addpcitem(ITEM_ZINC, 999)
     addpcitem(ITEM_CARBOS, 999)
-
+    addpcitem(ITEM_MASTER_BALL, 999)
     #release
 }
 
@@ -103,6 +103,18 @@ script Custom_Room_ForceTakePokemon {
     msgbox(Text_CustomRoom_YouHaveToPick, MSGBOX_AUTOCLOSE)
     applymovement(LOCALID_PLAYER, WalkUp)
     waitmovement(LOCALID_PLAYER)
+}
+
+script Custom_Room_HealParty {
+    lockall
+    msgbox(Text_CustomRoom_Statue, MSGBOX_AUTOCLOSE)
+    if(flag(FLAG_CUSTOM_RECEIVED_STARTER)) {
+        playfanfare(MUS_HEAL)
+        waitfanfare
+        special(HealPlayerParty)
+        msgbox(Text_CustomRoom_PartyHealed, MSGBOX_AUTOCLOSE)
+    }
+    releaseall
 }
 
 ## Movement scripts are local so their definition won't clash with others from other script files
@@ -128,4 +140,12 @@ text Text_CustomRoom_CannotDoThat {
 
 text Text_CustomRoom_YouHaveToPick {
     format("Something is missing.")
+}
+
+text Text_CustomRoom_Statue {
+    format("The statue exudes a strange energy.")
+}
+
+text Text_CustomRoom_PartyHealed {
+    format("Your Pokémon have been healed.")
 }

@@ -148,6 +148,8 @@ GiveStartingItems:
 	addpcitem ITEM_ZINC, 999
 # 97 "data/maps/Custom_Room/scripts.pory"
 	addpcitem ITEM_CARBOS, 999
+# 98 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_MASTER_BALL, 999
 	return
 
 
@@ -161,33 +163,65 @@ Custom_Room_ForceTakePokemon::
 	return
 
 
+Custom_Room_HealParty::
 # 109 "data/maps/Custom_Room/scripts.pory"
+	lockall
+# 110 "data/maps/Custom_Room/scripts.pory"
+	msgbox Text_CustomRoom_Statue, MSGBOX_AUTOCLOSE
+# 111 "data/maps/Custom_Room/scripts.pory"
+	goto_if_set FLAG_CUSTOM_RECEIVED_STARTER, Custom_Room_HealParty_2
+Custom_Room_HealParty_1:
+# 117 "data/maps/Custom_Room/scripts.pory"
+	releaseall
+	return
+
+Custom_Room_HealParty_2:
+# 112 "data/maps/Custom_Room/scripts.pory"
+	playfanfare MUS_HEAL
+# 113 "data/maps/Custom_Room/scripts.pory"
+	waitfanfare
+# 114 "data/maps/Custom_Room/scripts.pory"
+	special HealPlayerParty
+# 115 "data/maps/Custom_Room/scripts.pory"
+	msgbox Text_CustomRoom_PartyHealed, MSGBOX_AUTOCLOSE
+	goto Custom_Room_HealParty_1
+
+
+# 121 "data/maps/Custom_Room/scripts.pory"
 WalkUp:
-# 110 "data/maps/Custom_Room/scripts.pory"
+# 122 "data/maps/Custom_Room/scripts.pory"
 	walk_up
-# 110 "data/maps/Custom_Room/scripts.pory"
+# 122 "data/maps/Custom_Room/scripts.pory"
 	walk_up
-# 110 "data/maps/Custom_Room/scripts.pory"
+# 122 "data/maps/Custom_Room/scripts.pory"
 	walk_up
-# 110 "data/maps/Custom_Room/scripts.pory"
+# 122 "data/maps/Custom_Room/scripts.pory"
 	walk_up
 	step_end
 
 Text_CustomRoom_DoYouWantThisPokemon::
-# 113 "data/maps/Custom_Room/scripts.pory"
+# 125 "data/maps/Custom_Room/scripts.pory"
 	.string "You reach out, uncertain.\n"
 	.string "Will you take this Pokémon?$"
 
 Text_CustomRoom_PokemonPicked::
-# 119 "data/maps/Custom_Room/scripts.pory"
+# 131 "data/maps/Custom_Room/scripts.pory"
 	.string "A part of you clings to this choice.\n"
 	.string "You feel… a little more whole.$"
 
 Text_CustomRoom_CannotDoThat::
-# 125 "data/maps/Custom_Room/scripts.pory"
+# 137 "data/maps/Custom_Room/scripts.pory"
 	.string "You made your choice.\n"
 	.string "You can't turn back now.$"
 
 Text_CustomRoom_YouHaveToPick::
-# 129 "data/maps/Custom_Room/scripts.pory"
+# 141 "data/maps/Custom_Room/scripts.pory"
 	.string "Something is missing.$"
+
+Text_CustomRoom_Statue::
+# 145 "data/maps/Custom_Room/scripts.pory"
+	.string "The statue exudes a strange energy.$"
+
+Text_CustomRoom_PartyHealed::
+# 149 "data/maps/Custom_Room/scripts.pory"
+	.string "Your Pokémon have been healed.$"
