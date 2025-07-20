@@ -1,0 +1,18 @@
+mapscripts Custom_Hoenn_Route102_MapScripts {}
+
+script Custom_Hoenn_Route102_Trainer {
+    trainerbattle_single(TRAINER_ALLEN, Text_Custom_Route102_TrainerIntro, Text_Custom_Route102_TrainerDefeat)
+	msgbox(Text_Custom_Route102_TrainerAfterBattle, MSGBOX_AUTOCLOSE)
+}
+
+text Text_Custom_Route102_TrainerIntro {
+    format("Oh… A challenger? It's been so long since someone walked this path.")
+}
+
+text Text_Custom_Route102_TrainerDefeat {
+    format("Some things never change.")
+}
+
+text Text_Custom_Route102_TrainerAfterBattle {
+    format("I used to train every day, waiting for the next battle.\pThen the days stopped. I just stayed here.")
+}

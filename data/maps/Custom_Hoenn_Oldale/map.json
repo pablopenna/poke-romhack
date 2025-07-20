@@ -22,6 +22,11 @@
       "map": "MAP_CUSTOM_HOENN_ROUTE101",
       "offset": 0,
       "direction": "down"
+    },
+    {
+      "map": "MAP_CUSTOM_HOENN_ROUTE102",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [],
@@ -61,5 +66,14 @@
       "script": "Custom_Set_Dynamic_Warp_Oldale_PokeCenter"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Custom_LittleRoot_RivalHouseDoor"
+    }
+  ]
 }

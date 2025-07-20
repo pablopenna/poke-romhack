@@ -82,7 +82,7 @@ Music: Male
 Double Battle: No
 
 === TRAINER_INTRO_1 ===
-Name: Grunt
+Name: GRUNT
 Pic: Rocket M
 Class: Team Rocket
 Gender: Male
@@ -90,8 +90,19 @@ Double Battle: No
 AI: AI_FLAG_SMART_TRAINER
 
 Charmeleon
-Level: 22
+Level: 5
 IVs: 20 HP / 10 Atk / 20 Def / 10 SpA / 20 SpD / 0 Spe
+
+=== TRAINER_ALLEN ===
+Name: Allen
+Pic: FR Cooltrainer M
+Class: Cooltrainer
+Gender: Male
+Double Battle: No
+AI: AI_FLAG_SMART_TRAINER
+
+Staravia
+Level: 6
 
 === TRAINER_BROCK ===
 Name: Brock
@@ -6293,23 +6304,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Zigzagoon
 Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_ALLEN ===
-Name: ALLEN
-Class: Youngster
-Pic: Youngster
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Check Bad Move
-
-Zigzagoon
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Taillow
-Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TIMMY ===

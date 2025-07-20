@@ -4510,6 +4510,16 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/Custom_Hoenn_PokeCenter/border.bin",
       "blockdata_filepath": "data/layouts/Custom_Hoenn_PokeCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_ROUTE102",
+      "name": "Custom_Hoenn_Route102_Layout",
+      "width": 50,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Custom_Hoenn_Route102/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_Route102/map.bin"
     }
   ]
 }
