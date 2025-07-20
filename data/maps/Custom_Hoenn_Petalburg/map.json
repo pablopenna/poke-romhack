@@ -34,6 +34,13 @@
       "elevation": 0,
       "dest_map": "MAP_CUSTOM_HOENN_POKE_CENTER",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_CUSTOM_HOENN_PETALBURG_GYM",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

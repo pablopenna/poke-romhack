@@ -4530,6 +4530,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Custom_Hoenn_Petalburg/border.bin",
       "blockdata_filepath": "data/layouts/Custom_Hoenn_Petalburg/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_PETALBURG_GYM",
+      "name": "Custom_Hoenn_Petalburg_Gym_Layout",
+      "width": 8,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/Custom_Hoenn_Petalburg_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_Petalburg_Gym/map.bin"
     }
   ]
 }
