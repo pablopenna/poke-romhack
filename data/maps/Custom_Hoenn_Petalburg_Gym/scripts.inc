@@ -298,7 +298,7 @@ Text_Custom_Hoenn_Petalburg_Gym_Norman_Intro::
 # 137 "data/maps/Custom_Hoenn_Petalburg_Gym/scripts.pory"
 	.string "Welcome to the Petalburg's Gym.\p"
 	.string "...\p"
-	.string "Is it ...you?$"
+	.string "Is it... you?$"
 
 Text_Custom_Hoenn_Petalburg_Gym_Norman_Intro2::
 # 150 "data/maps/Custom_Hoenn_Petalburg_Gym/scripts.pory"
