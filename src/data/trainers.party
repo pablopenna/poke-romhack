@@ -89,9 +89,11 @@ Gender: Male
 Double Battle: No
 AI: AI_FLAG_SMART_TRAINER
 
-Charmeleon
-Level: 5
-IVs: 20 HP / 10 Atk / 20 Def / 10 SpA / 20 SpD / 0 Spe
+Zigzagoon
+Level: 2
+
+Koffing
+Level: 4
 
 === TRAINER_ALLEN ===
 Name: Allen

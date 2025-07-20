@@ -110,9 +110,9 @@ AcceptPokemon_2:
 
 AcceptPokemon_5:
 # 70 "data/maps/Custom_Room/scripts.pory"
-	givemon VAR_TEMP_1, 25
+	givemon VAR_TEMP_1, 5
 # 71 "data/maps/Custom_Room/scripts.pory"
-	setvar VAR_CUSTOM_LEVEL_CAP, 25
+	setvar VAR_CUSTOM_LEVEL_CAP, 15
 # 72 "data/maps/Custom_Room/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 73 "data/maps/Custom_Room/scripts.pory"
