@@ -46,26 +46,7 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Custom_Set_Dynamic_Warp_Oldale_Mart"
-    },
-    {
-      "type": "trigger",
-      "x": 6,
-      "y": 17,
-      "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Custom_Set_Dynamic_Warp_Oldale_PokeCenter"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

@@ -137,6 +137,18 @@
       "map": "MAP_CUSTOM_ROOM",
       "x": 5,
       "y": 5
+    },
+    {
+      "id": "HEAL_LOCATION_CUSTOM_OLDALE_TOWN",
+      "map": "MAP_CUSTOM_HOENN_OLDALE",
+      "x": 6,
+      "y": 17
+    },
+    {
+      "id": "HEAL_LOCATION_CUSTOM_PETALBURG_CITY",
+      "map": "MAP_CUSTOM_HOENN_PETALBURG",
+      "x": 20,
+      "y": 17
     }
   ]
 }

@@ -17,6 +17,11 @@
       "map": "MAP_CUSTOM_HOENN_OLDALE",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_CUSTOM_HOENN_PETALBURG",
+      "offset": -10,
+      "direction": "left"
     }
   ],
   "object_events": [

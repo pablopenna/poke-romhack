@@ -1,0 +1,41 @@
+{
+  "id": "MAP_CUSTOM_HOENN_PETALBURG",
+  "name": "Custom_Hoenn_Petalburg",
+  "layout": "LAYOUT_CUSTOM_HOENN_PETALBURG",
+  "music": "MUS_PETALBURG",
+  "region_map_section": "MAPSEC_CUSTOM_HOENN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_CUSTOM_HOENN_ROUTE102",
+      "offset": 10,
+      "direction": "right"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 25,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_CUSTOM_HOENN_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_CUSTOM_HOENN_POKE_CENTER",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
