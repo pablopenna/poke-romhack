@@ -32,8 +32,9 @@
 > "Where have you been? What have you been up to?
 > "Since you became the Champion we haven't heard anything about you"
 > "How long has it been since then?"
-> "Listen... your Mom..."
-> "...Don't worry, now that you are back it will be okay."
+> "Listen... your Mom... I..."
+> "..."
+> "Don't worry. Now that you are back everything will be okay."
 * steps back while facing player*
 > "..."
 > "..."
