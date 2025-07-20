@@ -14141,4 +14141,23 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    // Custom items
+    [ITEM_SYNCHRONICITY_ORB] = {
+        .name = _("Synchronicity Orb"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Allows a trainer to\n"
+            "unlock the potential\n" 
+            "of their Pokémon."
+        ),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_RareCandy,
+        .notConsumed = TRUE,
+        .iconPic = gItemIcon_TeraOrb,
+        .iconPalette = gItemIconPalette_TeraOrb,
+    },
 };
