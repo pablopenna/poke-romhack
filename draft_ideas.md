@@ -9,6 +9,8 @@
 ##### Notices player
 > What are you looking at?
 > Oh, you are a trainer? Let me see how strong you are!
+Suggestion:
+> Tch… Another trainer? Let's see if you're worth anything.
 ##### Defeat InBattle
 > Damn it! My Pokémon are so weak.
 ##### Defeat InOverworld
@@ -16,6 +18,12 @@
 > I gave up on them and since them I have been looking for stronger ones.
 > I'll keep searching. One day I will be the world's greatest Pokémon trainer!
 > We'll meet again.
+Suggestion:
+> I used to have strong Pokémon. I tried trusting them, being kind... 
+But it didn't matter, they still couldn’t beat him.
+So I gave up on them. Now I only want power.
+One day, I'll be the world's greatest Pokémon Trainer.
+We'll meet again.
 
 #### Others
 > ...You remind me of him
