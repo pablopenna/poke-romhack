@@ -1,1 +1,191 @@
-mapscripts Custom_Hoenn_Petalburg_Gym_MapScripts {}
+raw `
+.include "data/scripts/get_badge_number.inc"
+`
+
+const NORMAN_ID = LOCALID_PETALBURG_GYM_NORMAN
+const FLAG_ON_LEFT = FLAG_TEMP_1
+const FLAG_ON_RIGHT = FLAG_TEMP_2
+const FLAG_ON_TOP = FLAG_TEMP_3
+const FLAG_ON_BOTTOM = FLAG_TEMP_4
+
+mapscripts Custom_Hoenn_Petalburg_Gym_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        setvar(VAR_TEMP_0, 0)
+    }
+}
+
+script Custom_Hoenn_Petalburg_Gym_Norman {
+    if(!flag(FLAG_CUSTOM_SPOKE_NORMAN_INTRO)) {
+        call(Custom_Hoenn_Petalburg_Gym_Norman_Play_Intro)
+        setflag(FLAG_CUSTOM_SPOKE_NORMAN_INTRO)
+    }
+
+    call(CommonGetBadgeNumber)
+    if(var(VAR_RESULT) < 4) {
+        call(Custom_Hoenn_Petalburg_Gym_Norman_OnNotEnoughBadges)
+    } else {
+        call(Custom_Hoenn_Petalburg_Gym_Norman_OnEnoughBadges)
+    }
+}
+
+script Custom_Hoenn_Petalburg_Gym_OnNormanLeft {
+    setflag(FLAG_ON_LEFT)
+    clearflag(FLAG_ON_RIGHT)
+    clearflag(FLAG_ON_TOP)
+    clearflag(FLAG_ON_BOTTOM)
+}
+
+script Custom_Hoenn_Petalburg_Gym_OnNormanRight {
+    clearflag(FLAG_ON_LEFT)
+    setflag(FLAG_ON_RIGHT)
+    clearflag(FLAG_ON_TOP)
+    clearflag(FLAG_ON_BOTTOM)
+}
+
+script Custom_Hoenn_Petalburg_Gym_OnNormanTop {
+    clearflag(FLAG_ON_LEFT)
+    clearflag(FLAG_ON_RIGHT)
+    setflag(FLAG_ON_TOP)
+    clearflag(FLAG_ON_BOTTOM)
+}
+
+script Custom_Hoenn_Petalburg_Gym_OnNormanBottom {
+    clearflag(FLAG_ON_LEFT)
+    clearflag(FLAG_ON_RIGHT)
+    clearflag(FLAG_ON_TOP)
+    setflag(FLAG_ON_BOTTOM)
+}
+
+script Custom_Hoenn_Petalburg_Gym_TestGetBadges {
+    setflag(FLAG_BADGE01_GET)
+    setflag(FLAG_BADGE02_GET)
+    setflag(FLAG_BADGE03_GET)
+    setflag(FLAG_BADGE04_GET)
+}
+
+script Custom_Hoenn_Petalburg_Gym_Norman_FaceAway {
+    if(flag(FLAG_CUSTOM_SPOKE_NORMAN_INTRO)) {
+        applymovement(NORMAN_ID, moves(  
+            face_away_player
+        ))
+        waitmovement
+        releaseall
+    }
+}
+
+script(local) Custom_Hoenn_Petalburg_Gym_Intro_AdjustPlayerPosition {
+    if (flag(FLAG_ON_TOP)) {
+        applymovement(LOCALID_PLAYER, moves(  
+            walk_left
+            walk_down * 2
+            walk_right
+            face_up
+        ))
+        waitmovement
+    } elif (flag(FLAG_ON_LEFT)) {
+        applymovement(LOCALID_PLAYER, moves(
+            walk_down
+            walk_right
+            face_up
+        ))
+        waitmovement
+    } elif (flag(FLAG_ON_RIGHT)) {
+        applymovement(LOCALID_PLAYER, moves(
+            walk_down
+            walk_left
+            face_up
+        ))
+        waitmovement
+    }
+}
+
+script(local) Custom_Hoenn_Petalburg_Gym_Norman_Play_Intro {
+    call(Custom_Hoenn_Petalburg_Gym_Intro_AdjustPlayerPosition)
+
+    msgbox(Text_Custom_Hoenn_Petalburg_Gym_Norman_Intro, MSGBOX_AUTOCLOSE)
+    applymovement(NORMAN_ID, Custom_Hoenn_Petalburg_Gym_Norman_Intro_Movement1)
+    waitmovement
+
+    msgbox(Text_Custom_Hoenn_Petalburg_Gym_Norman_Intro2, MSGBOX_AUTOCLOSE)
+    applymovement(NORMAN_ID, Custom_Hoenn_Petalburg_Gym_Norman_Intro_Movement2)
+    waitmovement
+
+    msgbox(Text_Custom_Hoenn_Petalburg_Gym_Norman_Intro3, MSGBOX_AUTOCLOSE)
+    applymovement(NORMAN_ID, Custom_Hoenn_Petalburg_Gym_Norman_Intro_Movement3)
+    waitmovement
+
+    msgbox(Text_Custom_Hoenn_Petalburg_Gym_Norman_Intro4, MSGBOX_AUTOCLOSE)
+}
+
+script(local) Custom_Hoenn_Petalburg_Gym_Norman_OnNotEnoughBadges {
+    applymovement(NORMAN_ID, moves(
+        face_player
+        delay_16 * 2
+        face_away_player
+    ))
+    waitmovement
+    msgbox(Text_Custom_Hoenn_Petalburg_Gym_Norman_NotEnoughBadges, MSGBOX_AUTOCLOSE)
+}
+
+script(local) Custom_Hoenn_Petalburg_Gym_Norman_OnEnoughBadges {
+    applymovement(NORMAN_ID, moves(
+        face_player
+    ))
+    msgbox(format("Damn son!"), MSGBOX_AUTOCLOSE)
+}
+
+text Text_Custom_Hoenn_Petalburg_Gym_Norman_Intro {
+    format("Welcome to the Petalburg's Gym.\p...\pIs it... you?")
+}
+
+movement Custom_Hoenn_Petalburg_Gym_Norman_Intro_Movement1 {
+    face_player
+    lock_facing_direction
+    emote_exclamation_mark
+    walk_up
+    delay_16 * 4
+    walk_down
+}
+
+text Text_Custom_Hoenn_Petalburg_Gym_Norman_Intro2 {
+    format(
+        "Oh! Son! I've missed you so much. It's been so long!\p
+        Where have you been? What have you been doing all this time?\p
+        Since you became Champion we haven't heard anything from you.\p
+        How long has it been since then?\p
+        ...\p
+        Listen... your mom... I...\p
+        ...\p
+        Don't worry. Now that you're back, everything will be okay."
+    )
+}
+
+movement Custom_Hoenn_Petalburg_Gym_Norman_Intro_Movement2 {
+    face_player
+    lock_facing_direction
+    walk_up
+    delay_16
+}
+
+text Text_Custom_Hoenn_Petalburg_Gym_Norman_Intro3 {
+    format(
+        "...\p...\pYou're not my son, are you?"
+    )
+}
+
+movement Custom_Hoenn_Petalburg_Gym_Norman_Intro_Movement3 {
+    unlock_facing_direction
+    face_away_player
+}
+
+text Text_Custom_Hoenn_Petalburg_Gym_Norman_Intro4 {
+    format(
+        "Forget what I said. It doesn't matter."
+    )
+}
+
+text Text_Custom_Hoenn_Petalburg_Gym_Norman_NotEnoughBadges {
+    format(
+        "I can see you don't have any badges yet. Come back when you have four."
+    )
+}
