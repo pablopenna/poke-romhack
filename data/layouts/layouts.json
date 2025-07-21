@@ -4540,6 +4540,36 @@
       "secondary_tileset": "gTileset_PetalburgGym",
       "border_filepath": "data/layouts/Custom_Hoenn_Petalburg_Gym/border.bin",
       "blockdata_filepath": "data/layouts/Custom_Hoenn_Petalburg_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_ROUTE104",
+      "name": "Custom_Hoenn_Route104_Layout",
+      "width": 40,
+      "height": 80,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Custom_Hoenn_Route104/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_Route104/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_ROUTE105",
+      "name": "Custom_Hoenn_Route105_Layout",
+      "width": 30,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/Custom_Hoenn_Route105/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_Route105/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_DEWFORD",
+      "name": "Custom_Hoenn_Dewford_Layout",
+      "width": 50,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/Custom_Hoenn_Dewford/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_Dewford/map.bin"
     }
   ]
 }

@@ -150,78 +150,94 @@ GiveStartingItems:
 	addpcitem ITEM_CARBOS, 999
 # 98 "data/maps/Custom_Room/scripts.pory"
 	addpcitem ITEM_MASTER_BALL, 999
+# 100 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_HM01, 1
+# 101 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_HM02, 1
+# 102 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_HM03, 1
+# 103 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_HM04, 1
+# 104 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_HM05, 1
+# 105 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_HM06, 1
+# 106 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_HM07, 1
+# 107 "data/maps/Custom_Room/scripts.pory"
+	addpcitem ITEM_HM08, 1
 	return
 
 
 Custom_Room_ForceTakePokemon::
-# 103 "data/maps/Custom_Room/scripts.pory"
+# 112 "data/maps/Custom_Room/scripts.pory"
 	msgbox Text_CustomRoom_YouHaveToPick, MSGBOX_AUTOCLOSE
-# 104 "data/maps/Custom_Room/scripts.pory"
+# 113 "data/maps/Custom_Room/scripts.pory"
 	applymovement LOCALID_PLAYER, WalkUp
-# 105 "data/maps/Custom_Room/scripts.pory"
+# 114 "data/maps/Custom_Room/scripts.pory"
 	waitmovement LOCALID_PLAYER
 	return
 
 
 Custom_Room_HealParty::
-# 109 "data/maps/Custom_Room/scripts.pory"
+# 118 "data/maps/Custom_Room/scripts.pory"
 	lockall
-# 110 "data/maps/Custom_Room/scripts.pory"
+# 119 "data/maps/Custom_Room/scripts.pory"
 	msgbox Text_CustomRoom_Statue, MSGBOX_AUTOCLOSE
-# 111 "data/maps/Custom_Room/scripts.pory"
+# 120 "data/maps/Custom_Room/scripts.pory"
 	goto_if_set FLAG_CUSTOM_RECEIVED_STARTER, Custom_Room_HealParty_2
 Custom_Room_HealParty_1:
-# 117 "data/maps/Custom_Room/scripts.pory"
+# 126 "data/maps/Custom_Room/scripts.pory"
 	releaseall
 	return
 
 Custom_Room_HealParty_2:
-# 112 "data/maps/Custom_Room/scripts.pory"
+# 121 "data/maps/Custom_Room/scripts.pory"
 	playfanfare MUS_HEAL
-# 113 "data/maps/Custom_Room/scripts.pory"
+# 122 "data/maps/Custom_Room/scripts.pory"
 	waitfanfare
-# 114 "data/maps/Custom_Room/scripts.pory"
+# 123 "data/maps/Custom_Room/scripts.pory"
 	special HealPlayerParty
-# 115 "data/maps/Custom_Room/scripts.pory"
+# 124 "data/maps/Custom_Room/scripts.pory"
 	msgbox Text_CustomRoom_PartyHealed, MSGBOX_AUTOCLOSE
 	goto Custom_Room_HealParty_1
 
 
-# 121 "data/maps/Custom_Room/scripts.pory"
+# 130 "data/maps/Custom_Room/scripts.pory"
 WalkUp:
-# 122 "data/maps/Custom_Room/scripts.pory"
+# 131 "data/maps/Custom_Room/scripts.pory"
 	walk_up
-# 122 "data/maps/Custom_Room/scripts.pory"
+# 131 "data/maps/Custom_Room/scripts.pory"
 	walk_up
-# 122 "data/maps/Custom_Room/scripts.pory"
+# 131 "data/maps/Custom_Room/scripts.pory"
 	walk_up
-# 122 "data/maps/Custom_Room/scripts.pory"
+# 131 "data/maps/Custom_Room/scripts.pory"
 	walk_up
 	step_end
 
 Text_CustomRoom_DoYouWantThisPokemon::
-# 125 "data/maps/Custom_Room/scripts.pory"
+# 134 "data/maps/Custom_Room/scripts.pory"
 	.string "You reach out, uncertain.\n"
 	.string "Will you take this Pokémon?$"
 
 Text_CustomRoom_PokemonPicked::
-# 131 "data/maps/Custom_Room/scripts.pory"
+# 140 "data/maps/Custom_Room/scripts.pory"
 	.string "A part of you clings to this choice.\n"
 	.string "You feel… a little more whole.$"
 
 Text_CustomRoom_CannotDoThat::
-# 137 "data/maps/Custom_Room/scripts.pory"
+# 146 "data/maps/Custom_Room/scripts.pory"
 	.string "You made your choice.\n"
 	.string "You can't turn back now.$"
 
 Text_CustomRoom_YouHaveToPick::
-# 141 "data/maps/Custom_Room/scripts.pory"
+# 150 "data/maps/Custom_Room/scripts.pory"
 	.string "Something is missing.$"
 
 Text_CustomRoom_Statue::
-# 145 "data/maps/Custom_Room/scripts.pory"
+# 154 "data/maps/Custom_Room/scripts.pory"
 	.string "The statue exudes a strange energy.$"
 
 Text_CustomRoom_PartyHealed::
-# 149 "data/maps/Custom_Room/scripts.pory"
+# 158 "data/maps/Custom_Room/scripts.pory"
 	.string "Your Pokémon have been healed.$"
