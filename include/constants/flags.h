@@ -741,12 +741,12 @@
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
 #define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
 #define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
 
 // Event Flags
+#define FLAG_CUSTOM_ROUTE104_SILVER_ENCOUNTER                       0x2B8
+#define FLAG_CUSTOM_SPOKE_NORMAN_INTRO                              0x2B9
 #define FLAG_CUSTOM_HOENN_LITTLEROOT_HIDE_REFLECTION                0x2BA
 #define FLAG_CUSTOM_INTRO_ROCKET_DEFEATED                           0x2BB
-#define FLAG_CUSTOM_SPOKE_NORMAN_INTRO                              0x2B9
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
 #define FLAG_HIDE_APPRENTICE                                        0x2BD
 #define FLAG_HIDE_POKEMON_CENTER_2F_MYSTERY_GIFT_MAN                0x2BE

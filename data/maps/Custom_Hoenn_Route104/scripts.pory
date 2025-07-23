@@ -1,1 +1,133 @@
-mapscripts Custom_Hoenn_Route104_MapScripts {}
+const SILVER_ID = LOCALID_SILVER
+const IS_PLAYER_TOP = FLAG_TEMP_1
+const IS_PLAYER_BOTTOM = FLAG_TEMP_2
+
+mapscripts Custom_Hoenn_Route104_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        setvar(VAR_TEMP_0, 0)
+        if(flag(FLAG_CUSTOM_ROUTE104_SILVER_ENCOUNTER)) {
+            setvar(VAR_TEMP_0, 1)
+        }
+        clearflag(IS_PLAYER_TOP)
+        clearflag(IS_PLAYER_BOTTOM)
+    }
+}
+
+script Custom_Hoenn_Route104_SilverEncounter_Top {
+    if(flag(FLAG_CUSTOM_ROUTE104_SILVER_ENCOUNTER)) {
+        return
+    }
+    setflag(IS_PLAYER_TOP)
+    clearflag(IS_PLAYER_BOTTOM)
+    call(Custom_Hoenn_Route104_SilverEncounter)
+}
+
+script Custom_Hoenn_Route104_SilverEncounter_Bottom {
+    if(flag(FLAG_CUSTOM_ROUTE104_SILVER_ENCOUNTER)) {
+        return
+    }
+    clearflag(IS_PLAYER_TOP)
+    setflag(IS_PLAYER_BOTTOM)
+    call(Custom_Hoenn_Route104_SilverEncounter)
+}
+
+script(local) Custom_Hoenn_Route104_SilverEncounter {
+    applymovement(LOCALID_PLAYER, moves (walk_in_place_left))
+
+    # Notice player
+    msgbox(Custom_Hoenn_Route104_SilverEncounter1, MSGBOX_AUTOCLOSE)
+    applymovement(SILVER_ID, SilverMovementNoticePlayer)
+    playse(SE_PIN)
+    waitmovement
+    playbgm(MUS_RG_ENCOUNTER_RIVAL, FALSE)
+    
+    # Approach player
+    if(flag(IS_PLAYER_BOTTOM)) {
+        applymovement(SILVER_ID, SilverMovementIntroBottomAdjustment)
+        waitmovement
+    }
+    applymovement(SILVER_ID, SilverMovementIntro)
+    waitmovement
+    
+    # Battle
+    msgbox(Custom_Hoenn_Route104_SilverEncounter2, MSGBOX_AUTOCLOSE)
+    delay(32)
+    applymovement(SILVER_ID, ExclamationEmote)
+    playse(SE_PIN)
+    waitmovement
+    applymovement(SILVER_ID, FacePlayer)
+    waitmovement
+    delay(16)
+    msgbox(Custom_Hoenn_Route104_SilverEncounter3, MSGBOX_AUTOCLOSE)
+    applymovement(SILVER_ID, FacePlayer)
+    waitmovement
+    trainerbattle_no_intro(TRAINER_SILVER, Custom_Hoenn_Route104_SilverEncounterBattleDefeat)
+    playbgm(MUS_RG_RIVAL_EXIT, FALSE)
+    applymovement(SILVER_ID, FacePlayer)
+    waitmovement
+    setflag(FLAG_CUSTOM_ROUTE104_SILVER_ENCOUNTER)
+    msgbox(Custom_Hoenn_Route104_SilverEncounterOverworldDefeat, MSGBOX_AUTOCLOSE)
+
+    #Exit
+    applymovement(SILVER_ID, SilverMovementExit)
+    waitmovement
+    removeobject(SILVER_ID)
+    playbgm(MUS_ROUTE104, FALSE)
+}
+
+movement SilverMovementNoticePlayer {
+    face_player
+    delay_16
+    emote_exclamation_mark
+    delay_16*3
+}
+
+movement ExclamationEmote {
+    emote_exclamation_mark
+}
+
+movement FacePlayer {
+    face_player
+}
+
+movement SilverMovementIntro {
+    walk_right * 6
+}
+
+movement SilverMovementIntroBottomAdjustment {
+    walk_down,
+    face_right
+}
+
+movement SilverMovementExit {
+    walk_left * 6
+    walk_up * 6
+}
+
+text Custom_Hoenn_Route104_SilverEncounter1 {
+    format("I wonder if there are any strong Pokémon around here...")
+}
+
+text Custom_Hoenn_Route104_SilverEncounter2 {
+    format("What are you looking at?")
+}
+
+text Custom_Hoenn_Route104_SilverEncounter3 {
+    format("Tch… Another trainer? Let's see if you're worth anything.")
+}
+
+text Custom_Hoenn_Route104_SilverEncounterBattleDefeat {
+    format("Damn it! My Pokémon are so weak.")
+}
+
+text Custom_Hoenn_Route104_SilverEncounterOverworldDefeat {
+    format(
+        "I used to have strong Pokémon. I tried trusting and treating\p
+        them with love but they still couldn't defeat him.\p
+        I gave up on them and since then I have been looking for stronger ones.\p
+        I'll keep searching. One day I will be the world's greatest Pokémon trainer!\p
+        We'll meet again."
+    )
+}
+
+

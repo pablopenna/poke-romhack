@@ -24,8 +24,42 @@
       "direction": "down"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_SILVER",
+      "graphics_id": "OBJ_EVENT_GFX_SILVER",
+      "x": 29,
+      "y": 62,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_CUSTOM_ROUTE104_SILVER_ENCOUNTER"
+    }
+  ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 62,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Custom_Hoenn_Route104_SilverEncounter_Top"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 63,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Custom_Hoenn_Route104_SilverEncounter_Bottom"
+    }
+  ],
   "bg_events": []
 }
