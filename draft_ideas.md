@@ -148,7 +148,8 @@ A connection idea is adding the magnettrain to Mauville city that allows the pla
 ## Hoenn
 https://bulbapedia.bulbagarden.net/wiki/Hoenn
 
-### Littleroot
+### Littleroot town
+From wiki: Basking amid vibrant nature, this simple town is not shaded with any one hue.
 
 #### Buildings
 The Pokemon Lab is not the Pokemon lab anymore. When entering, it leads to the empty room where the player starts.
@@ -157,13 +158,74 @@ The house of the player is the one on the right. The inside is an exact copy but
 
 Rival's house, the one on the left is closed.
 
-### Dewford
+### Oldale town
+From wiki: A town where the contrast between colorful flowers and deep, verdant forests is most beautiful.
+
+### Petalburg city
+From wiki: A whiff of salt is always in the air in this city, which is skirted by the ocean shore.
+
+### Rustboro city
+From the wiki: This city is the main hub of industry in the Hoenn region, with the Devon Corporation as its beating heart.
+
+### Dewford town
+From wiki: New trends are always the rage among the inhabitants of this small island town.
 
 Modified to be more rocky like. Now it is surrounded by rocks rather than having a single cave to the west.
 This is because of the fight aftermath between the Groudon vs Kyogre which caused earthquakes can 
 caused the landscape around Dewford to change.
 
-### Mauville
+### Slateport city
+From wiki: People from many different regions gather and mingle in this bustling port city.
+
+### Mauville city
+From wiki: This large city is located in the heart of the Hoenn region, at the crossroads of its nostalgic past and new technology.
 
 Technological hub of Hoenn. Thanks to all the power obtained from its power facilities, it has been 
 able to develop and build the magnettrain.
+
+### Verdanturf town
+From wiki: Thanks to the prevailing wind pattern, this town is always kept clear of falling volcanic ash.
+
+Could add ash to it in a similar way to Dewfort: the Groudon v Kyogre 
+conflict made changes in the landscape that at the same time made the town 
+to start receiving the ashes from the volcano.
+
+Another possible thing to add is an encounter versus Willy with their 
+insignia Gardevoir.
+
+The route to the left of Mauville could also be covered in ash.
+
+### Fallarbor town
+From wiki: A town formed by scholars who gather to research meteorites.
+
+In a similar fashion to Verdantturf, I could change it to have stopped 
+receiving the volcanic ash. The route leading to it could also change and 
+stop having volcanic ash.
+
+### Lavaridge town
+From wiki: A popular spot in the Hoenn region, thanks to its hot springs, 
+said to cure any ailment.
+
+### Fortree city
+From wiki: The people and the Pokémon of this city follow nature's cues to 
+rise each morning and end each day.
+
+Idea: move root powder shop to this city as per "he people and the Pokémon of this city follow nature's cues".
+
+### Lilycove city
+From wiki: This tourist destination is undergoing a revival, thanks to the popularity of its Pokémon Contest Spectaculars.
+
+### Mossdeep city
+From wiki: Research is underway day and night in this city, all in the hope of understanding the distant reaches of space.
+
+### Sootopolis city
+From wiki: This city, which rises from the crater of a great meteoroid crash, can only be reached through the sea or from the sky.
+
+### Pacifidlog town
+From wiki: This town first came into being as a floating storehouse used by people living on the ocean's surface.
+
+Idea: have this town be a stop point of people navigating the seas who are 
+just passing by. Could have thieves, pirates and the likes. If done this way, could be a good idea to add a pub or inn.
+
+### Ever Grande city
+From wiki: This city is blanketed in a profusion of colorful blooms. It plays host to the grand Pokémon League (Ever Grande City). A revered site that can only be visited by those Trainers who have dominated every last Pokémon Gym (Pokémon League).
