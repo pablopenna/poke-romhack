@@ -1,1 +1,140 @@
-mapscripts Custom_Hoenn_PetalburgWoods_MapScripts {}
+const IS_PLAYER_RIGHTSIDE = FLAG_TEMP_1
+const LOCALID_NPC_LEFT = LOCALID_BUGCATCHER_LEFT
+const LOCALID_NPC_MIDDLE = LOCALID_BUGCATCHER_MIDDLE
+const LOCALID_NPC_RIGHT = LOCALID_BUGCATCHER_RIGHT
+
+mapscripts Custom_Hoenn_PetalburgWoods_MapScripts {
+    MAP_SCRIPT_ON_LOAD {
+        setvar(VAR_TEMP_1, 0)
+        if(!flag(FLAG_CUSTOM_PETALBURGWOODS_AMBUSH)) {
+            setvar(VAR_TEMP_1, 1)
+        }
+    }
+}
+
+script Custom_Hoenn_PetalburgWoods_Ambush_PlayerOnLeft {
+    clearflag(IS_PLAYER_RIGHTSIDE)
+    call(Custom_Hoenn_PetalburgWoods_Ambush)
+}
+
+script Custom_Hoenn_PetalburgWoods_Ambush_PlayerOnRight {
+    setflag(IS_PLAYER_RIGHTSIDE)
+    call(Custom_Hoenn_PetalburgWoods_Ambush)
+}
+
+script(local) Custom_Hoenn_PetalburgWoods_Ambush {
+    lockall
+    applymovement(LOCALID_PLAYER, moves(face_up, emote_exclamation_mark))
+    playse(SE_PIN)
+    waitmovement(LOCALID_PLAYER)
+
+    # approach to player
+    if(flag(IS_PLAYER_RIGHTSIDE)) {
+        applymovement(LOCALID_NPC_LEFT, LeftNPCMovement_Approach_Adjust)
+        applymovement(LOCALID_NPC_MIDDLE, MiddleNPCMovement_Approach_Adjust)
+    } else {
+        applymovement(LOCALID_NPC_RIGHT, RightNPCMovement_Approach_Adjust)
+    }
+    waitmovement(LOCALID_NPC_LEFT)
+    waitmovement(LOCALID_NPC_MIDDLE)
+    waitmovement(LOCALID_NPC_RIGHT)
+
+    applymovement(LOCALID_NPC_LEFT, LeftNPCMovement_Approach)
+    applymovement(LOCALID_NPC_MIDDLE, MiddleNPCMovement_Approach)
+    applymovement(LOCALID_NPC_RIGHT, RightNPCMovement_Approach)
+    
+    waitmovement(LOCALID_NPC_LEFT)
+    waitmovement(LOCALID_NPC_MIDDLE)
+    waitmovement(LOCALID_NPC_RIGHT)
+
+    # battles
+    msgbox(Text_Custom_Hoenn_PetalburgWoods_Ambush1, MSGBOX_AUTOCLOSE)
+    trainerbattle_no_intro(TRAINER_DAVIS, Text_Custom_Hoenn_PetalburgWoods_Ambush_LoseBattle1)
+    msgbox(Text_Custom_Hoenn_PetalburgWoods_Ambush_AfterBattle1, MSGBOX_AUTOCLOSE)
+    trainerbattle_no_intro(TRAINER_DAVIS, Text_Custom_Hoenn_PetalburgWoods_Ambush_LoseBattle2)
+    msgbox(Text_Custom_Hoenn_PetalburgWoods_Ambush_AfterBattle2, MSGBOX_AUTOCLOSE)
+    trainerbattle_no_intro(TRAINER_DAVIS, Text_Custom_Hoenn_PetalburgWoods_Ambush_LoseBattle3)
+    msgbox(Text_Custom_Hoenn_PetalburgWoods_Ambush_AfterBattle3, MSGBOX_AUTOCLOSE)
+    
+    # make room for player
+    applymovement(LOCALID_NPC_MIDDLE, MiddleNPCMovement_GiveWay)
+    waitmovement(LOCALID_NPC_MIDDLE)
+    
+    setflag(FLAG_CUSTOM_PETALBURGWOODS_AMBUSH)
+    releaseall
+}
+
+text Text_Custom_Hoenn_PetalburgWoods_Ambush1 {
+    format(
+        "Hey. Stop right there. You're not from around here, are you?\p
+        This part of the forest isn't for outsiders. \p
+        Trainers like you just... disappear. Turn back, or you'll face the consequences\p 
+        ...\n
+        Fine. We'll do it the old way. I go first."
+    )
+}
+
+text Text_Custom_Hoenn_PetalburgWoods_Ambush_LoseBattle1 {
+    format(
+        "Tch... You got lucky."
+    )
+}
+
+text Text_Custom_Hoenn_PetalburgWoods_Ambush_AfterBattle1 {
+    format(
+        "My turn."
+    )
+}
+
+text Text_Custom_Hoenn_PetalburgWoods_Ambush_LoseBattle2 {
+    format(
+        "You're tougher than you look. Still it doesn't mean you belong here."
+    )
+}
+
+text Text_Custom_Hoenn_PetalburgWoods_Ambush_AfterBattle2 {
+    format(
+        "I'll finish this."
+    )
+}
+
+text Text_Custom_Hoenn_PetalburgWoods_Ambush_LoseBattle3 {
+    format(
+        "Hmph... fine."
+    )
+}
+
+text Text_Custom_Hoenn_PetalburgWoods_Ambush_AfterBattle3 {
+    format(
+        "Next time, we won't hold back. Get lost."
+    )
+}
+
+movement LeftNPCMovement_Approach {
+    walk_right * 7
+}
+
+movement MiddleNPCMovement_Approach {
+    walk_down * 5
+}
+
+movement RightNPCMovement_Approach {
+    walk_left * 7
+}
+
+movement LeftNPCMovement_Approach_Adjust {
+    walk_right
+}
+
+movement MiddleNPCMovement_Approach_Adjust {
+    walk_right
+}
+
+movement RightNPCMovement_Approach_Adjust {
+    walk_left
+}
+
+movement MiddleNPCMovement_GiveWay {
+    walk_left
+    face_right
+}

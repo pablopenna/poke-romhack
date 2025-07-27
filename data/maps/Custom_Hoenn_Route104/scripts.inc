@@ -205,20 +205,22 @@ SilverMovementExit:
 
 Custom_Hoenn_Route104_Fisherman::
 # 140 "data/maps/Custom_Hoenn_Route104/scripts.pory"
+	lockall
+# 141 "data/maps/Custom_Hoenn_Route104/scripts.pory"
 	goto_if_unset FLAG_CUSTOM_ROUTE104_RECEIVED_ROD, Custom_Hoenn_Route104_Fisherman_2
-# 145 "data/maps/Custom_Hoenn_Route104/scripts.pory"
-	msgbox Custom_Hoenn_Route104_Fisherman_AfterRod, MSGBOX_AUTOCLOSE
 Custom_Hoenn_Route104_Fisherman_1:
-# 147 "data/maps/Custom_Hoenn_Route104/scripts.pory"
-	applymovement LOCALID_OLD_ROD_FISHERMAN, Custom_Hoenn_Route104_Fisherman_Movement_0
+# 146 "data/maps/Custom_Hoenn_Route104/scripts.pory"
+	msgbox Custom_Hoenn_Route104_Fisherman_AfterRod, MSGBOX_AUTOCLOSE
+# 148 "data/maps/Custom_Hoenn_Route104/scripts.pory"
+	releaseall
 	return
 
 Custom_Hoenn_Route104_Fisherman_2:
-# 141 "data/maps/Custom_Hoenn_Route104/scripts.pory"
-	msgbox Custom_Hoenn_Route104_Fisherman_GiveRod, MSGBOX_AUTOCLOSE
 # 142 "data/maps/Custom_Hoenn_Route104/scripts.pory"
-	giveitem ITEM_OLD_ROD
+	msgbox Custom_Hoenn_Route104_Fisherman_GiveRod, MSGBOX_AUTOCLOSE
 # 143 "data/maps/Custom_Hoenn_Route104/scripts.pory"
+	giveitem ITEM_OLD_ROD
+# 144 "data/maps/Custom_Hoenn_Route104/scripts.pory"
 	setflag FLAG_CUSTOM_ROUTE104_RECEIVED_ROD
 	goto Custom_Hoenn_Route104_Fisherman_1
 
@@ -227,12 +229,6 @@ Custom_Hoenn_Route104_Fisherman_2:
 Custom_Hoenn_Route104_SilverEncounter_Movement_0:
 # 39 "data/maps/Custom_Hoenn_Route104/scripts.pory"
 	walk_in_place_left
-	step_end
-
-# 147 "data/maps/Custom_Hoenn_Route104/scripts.pory"
-Custom_Hoenn_Route104_Fisherman_Movement_0:
-# 147 "data/maps/Custom_Hoenn_Route104/scripts.pory"
-	face_down
 	step_end
 
 Custom_Hoenn_Route104_SilverEncounter1::
@@ -266,7 +262,7 @@ Custom_Hoenn_Route104_SilverEncounterOverworldDefeat::
 	.string "We'll meet again.$"
 
 Custom_Hoenn_Route104_Fisherman_GiveRod::
-# 150 "data/maps/Custom_Hoenn_Route104/scripts.pory"
+# 151 "data/maps/Custom_Hoenn_Route104/scripts.pory"
 	.string "I used to love fishing. Everyday I would\n"
 	.string "wake up early and spend the whole\p"
 	.string "day doing it. I enjoyed every second.\p"
@@ -276,5 +272,5 @@ Custom_Hoenn_Route104_Fisherman_GiveRod::
 	.string "Take this, I don't need it anymore.$"
 
 Custom_Hoenn_Route104_Fisherman_AfterRod::
-# 160 "data/maps/Custom_Hoenn_Route104/scripts.pory"
+# 161 "data/maps/Custom_Hoenn_Route104/scripts.pory"
 	.string "Please go. I want to be alone.$"

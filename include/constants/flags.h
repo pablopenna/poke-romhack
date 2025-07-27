@@ -739,9 +739,9 @@
 #define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
 #define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
-#define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
 
 // Event Flags
+#define FLAG_CUSTOM_PETALBURGWOODS_AMBUSH                           0x2B6
 #define FLAG_CUSTOM_ROUTE104_RECEIVED_ROD                           0x2B7
 #define FLAG_CUSTOM_ROUTE104_SILVER_ENCOUNTER                       0x2B8
 #define FLAG_CUSTOM_SPOKE_NORMAN_INTRO                              0x2B9
