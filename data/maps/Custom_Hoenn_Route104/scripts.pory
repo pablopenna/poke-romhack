@@ -2,6 +2,8 @@ const SILVER_ID = LOCALID_SILVER
 const IS_PLAYER_TOP = FLAG_TEMP_1
 const IS_PLAYER_BOTTOM = FLAG_TEMP_2
 
+const OLD_ROD_NPC = LOCALID_OLD_ROD_FISHERMAN
+
 mapscripts Custom_Hoenn_Route104_MapScripts {
     MAP_SCRIPT_ON_LOAD {
         setvar(VAR_TEMP_0, 0)
@@ -12,6 +14,8 @@ mapscripts Custom_Hoenn_Route104_MapScripts {
         clearflag(IS_PLAYER_BOTTOM)
     }
 }
+
+### Silver
 
 script Custom_Hoenn_Route104_SilverEncounter_Top {
     if(flag(FLAG_CUSTOM_ROUTE104_SILVER_ENCOUNTER)) {
@@ -130,4 +134,33 @@ text Custom_Hoenn_Route104_SilverEncounterOverworldDefeat {
     )
 }
 
+### Fisherman
+
+script Custom_Hoenn_Route104_Fisherman {
+    lockall
+    if(!flag(FLAG_CUSTOM_ROUTE104_RECEIVED_ROD)) {
+        msgbox(Custom_Hoenn_Route104_Fisherman_GiveRod, MSGBOX_AUTOCLOSE)
+        giveitem(ITEM_OLD_ROD)
+        setflag(FLAG_CUSTOM_ROUTE104_RECEIVED_ROD)
+    } 
+    msgbox(Custom_Hoenn_Route104_Fisherman_AfterRod, MSGBOX_AUTOCLOSE)
+    # applymovement(OLD_ROD_NPC, moves(face_down))
+    releaseall
+}
+
+text Custom_Hoenn_Route104_Fisherman_GiveRod {
+    format(
+        "I used to love fishing. Everyday I would wake up early and spend the whole \p
+        day doing it. I enjoyed every second.  \p
+        Now I don't feel anything. I have to force myself to do it and still\p
+        I don't last long before stopping.\p
+        Take this, I don't need it anymore."
+    )
+}
+
+text Custom_Hoenn_Route104_Fisherman_AfterRod {
+    format(
+        "Please go. I want to be alone."
+    )
+}
 

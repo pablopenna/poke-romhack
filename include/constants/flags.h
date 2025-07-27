@@ -740,9 +740,9 @@
 #define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
 #define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
 
 // Event Flags
+#define FLAG_CUSTOM_ROUTE104_RECEIVED_ROD                           0x2B7
 #define FLAG_CUSTOM_ROUTE104_SILVER_ENCOUNTER                       0x2B8
 #define FLAG_CUSTOM_SPOKE_NORMAN_INTRO                              0x2B9
 #define FLAG_CUSTOM_HOENN_LITTLEROOT_HIDE_REFLECTION                0x2BA
@@ -1225,7 +1225,7 @@
 
 // Big unused flags chunk 
 #define FLAG_ITEM_CUSTOM_HOENN_ROUTE_101_ITEM                       0x493
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
+#define FLAG_ITEM_CUSTOM_HOENN_ROUTE_104_ITEM                       0x494
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
