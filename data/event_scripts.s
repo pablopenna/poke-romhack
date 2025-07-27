@@ -1190,3 +1190,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Custom_Hoenn_Route105/scripts.inc"
 
 	.include "data/maps/Custom_Hoenn_Dewford/scripts.inc"
+
+	.include "data/maps/Custom_Hoenn_PetalburgWoods/scripts.inc"

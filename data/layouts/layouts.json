@@ -4570,6 +4570,16 @@
       "secondary_tileset": "gTileset_Dewford",
       "border_filepath": "data/layouts/Custom_Hoenn_Dewford/border.bin",
       "blockdata_filepath": "data/layouts/Custom_Hoenn_Dewford/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUSTOM_HOENN_PETALBURG_WOODS",
+      "name": "Custom_Hoenn_PetalburgWoods_Layout",
+      "width": 48,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_PrettyPetalFlowerShop",
+      "border_filepath": "data/layouts/Custom_Hoenn_PetalburgWoods/border.bin",
+      "blockdata_filepath": "data/layouts/Custom_Hoenn_PetalburgWoods/map.bin"
     }
   ]
 }

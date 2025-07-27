@@ -17,7 +17,7 @@ mapscripts Custom_Room_MapScripts {
 const POKEMON_A = SPECIES_KANGASKHAN
 const POKEMON_B = SPECIES_HERACROSS
 const POKEMON_C = SPECIES_ABSOL
-const STARTER_LEVEL = 5
+const STARTER_LEVEL = 55
 const STARTING_LEVEL_CAP = 15
 
 script Custom_Room_IntroSequence {
